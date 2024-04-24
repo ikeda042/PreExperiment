@@ -5,3 +5,4 @@
 !images/
 !images/*
 !*.py
+!requirements.txt
