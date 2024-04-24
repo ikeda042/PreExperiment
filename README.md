@@ -17,7 +17,7 @@
 | 4    | 0.087  |
 | 5    | 0.103  |
 
-![alt text](url_to_image "Optional title")
+![alt text](images/Standard.png )
 
 
 
