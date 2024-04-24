@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from sklearn.metrics import r2_score
+from sklearn.metrics import r2_score as R2_
 import numpy as np
 from numpy.linalg import inv
 
@@ -30,11 +30,11 @@ plt.text(
     fontsize=12,
 )
 
-r2: float = r2_score(Y, [theta[0] + theta[1] * i for i in conc])
+r2: float = R2_(Y, [theta[0] + theta[1] * i for i in conc])
 plt.text(1, 0.07, r"$R^2 =$" + f"{r2:.3f}", fontsize=12)
 
 # set ticks to the inside
 plt.tick_params(direction="in")
 plt.xlabel(r"$Conc._\text{V.B.12}$  (µg/ml)")
 plt.ylabel(r"$\text{OD}_{360}$")
-plt.savefig("Standard.png", dpi=500)
+plt.savefig("images/Standard.png", dpi=500)
