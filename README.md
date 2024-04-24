@@ -17,8 +17,12 @@
 | 4    | 0.087  |
 | 5    | 0.103  |
 
-[エクセルデータ](OD600_PH_data_raw.xlsx)
+![alt text](url_to_image "Optional title")
 
+
+
+# 培養
+[エクセルデータ](OD600_PH_data_raw.xlsx)
 ## １日目(04/22, 22:00)
 
 前培養OD600 = 11.27
