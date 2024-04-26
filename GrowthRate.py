@@ -74,28 +74,28 @@ plt.scatter(
     pro_glu_0,
     color="#ADD8E6",
     zorder=10,
-    label=f"0.0 M µ={pro_glu_0_mu}" + r"$$day^{-1}",
+    label=f"0.0 M µ={pro_glu_0_mu}" + r"$day^{-1}$",
 )
 plt.scatter(
     [0, 1, 4],
     pro_glu_05,
     color="#3399FF",
     zorder=10,
-    label=f"0.050 M µ={pro_glu_05_mu}" + r"$$day^{-1}",
+    label=f"0.050 M µ={pro_glu_05_mu}" + r"$day^{-1}$",
 )
 plt.scatter(
     [0, 1, 4],
     pro_glu_1,
     color="#0000FF",
     zorder=10,
-    label=f"0.10 M µ={pro_glu_1_mu}" + r"$$day^{-1}",
+    label=f"0.10 M µ={pro_glu_1_mu}" + r"$day^{-1}$",
 )
 plt.scatter(
     [0, 1, 4],
     pro_glu_15,
     color="#0000CC",
     zorder=10,
-    label=f"0.15 M µ={pro_glu_15_mu}" + r"$$day^{-1}",
+    label=f"0.15 M µ={pro_glu_15_mu}" + r"$day^{-1}$",
 )
 
 plt.scatter(
@@ -103,14 +103,14 @@ plt.scatter(
     pro_glu_2,
     color="#000099",
     zorder=10,
-    label=f"0.20 M µ={pro_glu_2_mu}" + r"$$day^{-1}",
+    label=f"0.20 M µ={pro_glu_2_mu}" + r"$day^{-1}$",
 )
 plt.scatter(
     [0, 1, 4],
     pro_glu_3,
     color="#000066",
     zorder=10,
-    label=f"0.30 M µ={pro_glu_3_mu}" + r"$$day^{-1}",
+    label=f"0.30 M µ={pro_glu_3_mu}" + r"$day^{-1}$",
 )
 
 plt.legend(title="Propionic acid conc. (M)", loc="upper left")
@@ -135,28 +135,28 @@ plt.scatter(
     pro_no_glu_0,
     color="#FFA07A",
     zorder=10,
-    label=f"0.0 M µ={pro_no_glu_0_mu}" + r"$$day^{-1}",
+    label=f"0.0 M µ={pro_no_glu_0_mu}" + r"$day^{-1}$",
 )
 plt.scatter(
     [0, 1, 4],
     pro_no_glu_05,
     color="#FF6347",
     zorder=10,
-    label=f"0.050 M µ={pro_no_glu_05_mu}" + r"$$day^{-1}",
+    label=f"0.050 M µ={pro_no_glu_05_mu}" + r"$$day^{-1}$",
 )
 plt.scatter(
     [0, 1, 4],
     pro_no_glu_1,
     color="#FF4500",
     zorder=10,
-    label=f"0.10 M µ={pro_no_glu_1_mu}" + r"$$day^{-1}",
+    label=f"0.10 M µ={pro_no_glu_1_mu}" + r"$day^{-1}$",
 )
 plt.scatter(
     [0, 1, 4],
     pro_no_glu_15,
     color="#FF0000",
     zorder=10,
-    label=f"0.15 M µ={pro_no_glu_15_mu}" + r"$$day^{-1",
+    label=f"0.15 M µ={pro_no_glu_15_mu}" + r"$day^{-1}$",
 )
 
 plt.scatter(
@@ -164,14 +164,14 @@ plt.scatter(
     pro_no_glu_2,
     color="#CC0000",
     zorder=10,
-    label=f"0.20 M µ={pro_no_glu_2_mu}" + r"$$day^{-1}",
+    label=f"0.20 M µ={pro_no_glu_2_mu}" + r"$day^{-1}$",
 )
 plt.scatter(
     [0, 1, 4],
     pro_no_glu_3,
     color="#990000",
     zorder=10,
-    label=f"0.30 M µ={pro_no_glu_3_mu}" + r"$$day^{-1}",
+    label=f"0.30 M µ={pro_no_glu_3_mu}" + r"$day^{-1}$",
 )
 
 plt.legend(title="Propionic acid conc. (M)", loc="upper left")
