@@ -131,7 +131,7 @@ plt.legend(title="Propionic acid conc. (M)", loc="upper left")
 plt.tick_params(direction="in")
 plt.xlabel("Time (day)")
 plt.ylabel("OD600 (-)")
-
+plt.yscale("log")
 fig.savefig("images/OD600_glu.png", dpi=600)
 
 fig = plt.figure(figsize=(5, 5))
@@ -192,7 +192,7 @@ plt.legend(title="Propionic acid conc. (M)", loc="upper left")
 plt.tick_params(direction="in")
 plt.xlabel("Time (day)")
 plt.ylabel("OD600 (-)")
-
+plt.yscale("log")
 fig.savefig("images/OD600_no_glu.png", dpi=600)
 
 
