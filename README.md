@@ -86,6 +86,18 @@
 
 ![alt text](images/OD600_no_glu.png)
 
+## pH0の推移
+
+### 補糖あり
+
+![alt text](images/pH_glu.png)
+
+### 補糖なし
+
+![alt text](images/pH_no_glu.png)
+
+
+
 # Setup a python virtual environment 
 
 1. Create a virtual environment for python3
