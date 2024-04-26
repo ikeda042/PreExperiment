@@ -78,11 +78,11 @@
 
 ## OD600の推移
 
-補糖あり
+### 補糖あり
 
 ![alt text](images/OD600_glu.png)
 
-補糖なし
+### 補糖なし
 
 ![alt text](images/OD600_no_glu.png)
 
