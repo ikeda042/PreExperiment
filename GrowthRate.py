@@ -43,6 +43,22 @@ pro_no_glu_3 = np.array(
     [od600_no_glu_day1[5], od600_no_glu_day2[5], od600_no_glu_final[5]]
 )
 
+
+pro_glu_0_mu = (np.log(pro_glu_0) - np.log(pro_glu_0)[0]) / 1
+pro_glu_05_mu = (np.log(pro_glu_05) - np.log(pro_glu_05)[0]) / 1
+pro_glu_1_mu = (np.log(pro_glu_1) - np.log(pro_glu_1)[0]) / 1
+pro_glu_15_mu = (np.log(pro_glu_15) - np.log(pro_glu_15)[0]) / 1
+pro_glu_2_mu = (np.log(pro_glu_2) - np.log(pro_glu_2)[0]) / 1
+pro_glu_3_mu = (np.log(pro_glu_3) - np.log(pro_glu_3)[0]) / 1
+
+pro_no_glu_0_mu = (np.log(pro_no_glu_0) - np.log(pro_no_glu_0)[0]) / 1
+pro_no_glu_05_mu = (np.log(pro_no_glu_05) - np.log(pro_no_glu_05)[0]) / 1
+pro_no_glu_1_mu = (np.log(pro_no_glu_1) - np.log(pro_no_glu_1)[0]) / 1
+pro_no_glu_15_mu = (np.log(pro_no_glu_15) - np.log(pro_no_glu_15)[0]) / 1
+pro_no_glu_2_mu = (np.log(pro_no_glu_2) - np.log(pro_no_glu_2)[0]) / 1
+pro_no_glu_3_mu = (np.log(pro_no_glu_3) - np.log(pro_no_glu_3)[0]) / 1
+
+
 fig = plt.figure(figsize=(5, 5))
 
 
@@ -129,4 +145,3 @@ plt.xlabel("Time (day)")
 plt.ylabel("OD600 (-)")
 
 fig.savefig("images/OD600_overlay.png", dpi=600)
-# End GrowthRate.py
