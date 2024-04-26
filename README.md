@@ -74,6 +74,17 @@
 | 補糖なし    | 4.603  | 5.11 | 6.143 | 6.44 | 6.524 | 6.88 |
 
 
+# 結果
+
+## OD600の推移
+
+補糖あり
+
+![alt text](images/OD600_glu.png)
+
+補糖なし
+
+![alt text](images/OD600_no_glu.png)
 
 # Setup a python virtual environment 
 
