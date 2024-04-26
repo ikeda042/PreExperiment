@@ -91,78 +91,42 @@ plt.ylabel("OD600 (-)")
 
 fig.savefig("images/OD600_no_glu.png", dpi=600)
 
-# with glu/without glu
+
+# overlay
 fig = plt.figure(figsize=(5, 5))
 
-plt.plot([0, 1, 4], pro_glu_0 / pro_no_glu_0, color="#ADD8E6")
-plt.plot([0, 1, 4], pro_glu_05 / pro_no_glu_05, color="#3399FF")
-plt.plot([0, 1, 4], pro_glu_1 / pro_no_glu_1, color="#0000FF")
-plt.plot([0, 1, 4], pro_glu_15 / pro_no_glu_15, color="#0000CC")
-plt.plot([0, 1, 4], pro_glu_2 / pro_no_glu_2, color="#000099")
-plt.plot([0, 1, 4], pro_glu_3 / pro_no_glu_3, color="#000066")
+plt.plot([0, 1, 4], pro_glu_0, color="#ADD8E6")
+plt.plot([0, 1, 4], pro_glu_05, color="#3399FF")
+plt.plot([0, 1, 4], pro_glu_1, color="#0000FF")
+plt.plot([0, 1, 4], pro_glu_15, color="#0000CC")
+plt.plot([0, 1, 4], pro_glu_2, color="#000099")
+plt.plot([0, 1, 4], pro_glu_3, color="#000066")
 
-plt.scatter(
-    [0, 1, 4], pro_glu_0 / pro_no_glu_0, color="#ADD8E6", zorder=10, label="0.0 M"
-)
-plt.scatter(
-    [0, 1, 4], pro_glu_05 / pro_no_glu_05, color="#3399FF", zorder=10, label="0.050 M"
-)
-plt.scatter(
-    [0, 1, 4], pro_glu_1 / pro_no_glu_1, color="#0000FF", zorder=10, label="0.10 M"
-)
-plt.scatter(
-    [0, 1, 4], pro_glu_15 / pro_no_glu_15, color="#0000CC", zorder=10, label="0.15 M"
-)
-plt.scatter(
-    [0, 1, 4], pro_glu_2 / pro_no_glu_2, color="#000099", zorder=10, label="0.20 M"
-)
-plt.scatter(
-    [0, 1, 4], pro_glu_3 / pro_no_glu_3, color="#000066", zorder=10, label="0.30 M"
-)
+plt.scatter([0, 1, 4], pro_glu_0, color="#ADD8E6", zorder=10, label="0.0 M")
+plt.scatter([0, 1, 4], pro_glu_05, color="#3399FF", zorder=10, label="0.050 M")
+plt.scatter([0, 1, 4], pro_glu_1, color="#0000FF", zorder=10, label="0.10 M")
+plt.scatter([0, 1, 4], pro_glu_15, color="#0000CC", zorder=10, label="0.15 M")
+plt.scatter([0, 1, 4], pro_glu_2, color="#000099", zorder=10, label="0.20 M")
+plt.scatter([0, 1, 4], pro_glu_3, color="#000066", zorder=10, label="0.30 M")
 
-plt.legend(title="Propionic acid conc. (M)", loc="upper left")
-plt.tick_params(direction="in")
-plt.xlabel("Time (day)")
-plt.ylabel("Relative OD600 (-)")
+plt.plot([0, 1, 4], pro_no_glu_0, color="#FFA07A")
+plt.plot([0, 1, 4], pro_no_glu_05, color="#FF6347")
+plt.plot([0, 1, 4], pro_no_glu_1, color="#FF4500")
+plt.plot([0, 1, 4], pro_no_glu_15, color="#FF0000")
+plt.plot([0, 1, 4], pro_no_glu_2, color="#CC0000")
+plt.plot([0, 1, 4], pro_no_glu_3, color="#990000")
 
-fig.savefig("images/OD600_ratio.png", dpi=600)
-
-
-# # overlay
-# fig = plt.figure(figsize=(5, 5))
-
-# plt.plot([0, 1, 4], pro_glu_0, color="#ADD8E6")
-# plt.plot([0, 1, 4], pro_glu_05, color="#3399FF")
-# plt.plot([0, 1, 4], pro_glu_1, color="#0000FF")
-# plt.plot([0, 1, 4], pro_glu_15, color="#0000CC")
-# plt.plot([0, 1, 4], pro_glu_2, color="#000099")
-# plt.plot([0, 1, 4], pro_glu_3, color="#000066")
-
-# plt.scatter([0, 1, 4], pro_glu_0, color="#ADD8E6", zorder=10, label="0.0 M")
-# plt.scatter([0, 1, 4], pro_glu_05, color="#3399FF", zorder=10, label="0.050 M")
-# plt.scatter([0, 1, 4], pro_glu_1, color="#0000FF", zorder=10, label="0.10 M")
-# plt.scatter([0, 1, 4], pro_glu_15, color="#0000CC", zorder=10, label="0.15 M")
-# plt.scatter([0, 1, 4], pro_glu_2, color="#000099", zorder=10, label="0.20 M")
-# plt.scatter([0, 1, 4], pro_glu_3, color="#000066", zorder=10, label="0.30 M")
-
-# plt.plot([0, 1, 4], pro_no_glu_0, color="#FFA07A")
-# plt.plot([0, 1, 4], pro_no_glu_05, color="#FF6347")
-# plt.plot([0, 1, 4], pro_no_glu_1, color="#FF4500")
-# plt.plot([0, 1, 4], pro_no_glu_15, color="#FF0000")
-# plt.plot([0, 1, 4], pro_no_glu_2, color="#CC0000")
-# plt.plot([0, 1, 4], pro_no_glu_3, color="#990000")
-
-# plt.scatter([0, 1, 4], pro_no_glu_0, color="#FFA07A", zorder=10, label="0.0 M")
-# plt.scatter([0, 1, 4], pro_no_glu_05, color="#FF6347", zorder=10, label="0.050 M")
-# plt.scatter([0, 1, 4], pro_no_glu_1, color="#FF4500", zorder=10, label="0.10 M")
-# plt.scatter([0, 1, 4], pro_no_glu_15, color="#FF0000", zorder=10, label="0.15 M")
-# plt.scatter([0, 1, 4], pro_no_glu_2, color="#CC0000", zorder=10, label="0.20 M")
-# plt.scatter([0, 1, 4], pro_no_glu_3, color="#990000", zorder=10, label="0.30 M")
+plt.scatter([0, 1, 4], pro_no_glu_0, color="#FFA07A", zorder=10, label="0.0 M")
+plt.scatter([0, 1, 4], pro_no_glu_05, color="#FF6347", zorder=10, label="0.050 M")
+plt.scatter([0, 1, 4], pro_no_glu_1, color="#FF4500", zorder=10, label="0.10 M")
+plt.scatter([0, 1, 4], pro_no_glu_15, color="#FF0000", zorder=10, label="0.15 M")
+plt.scatter([0, 1, 4], pro_no_glu_2, color="#CC0000", zorder=10, label="0.20 M")
+plt.scatter([0, 1, 4], pro_no_glu_3, color="#990000", zorder=10, label="0.30 M")
 
 # plt.legend(title="Propionic acid conc. (M)", loc="upper left")
-# plt.tick_params(direction="in")
-# plt.xlabel("Time (day)")
-# plt.ylabel("OD600 (-)")
+plt.tick_params(direction="in")
+plt.xlabel("Time (day)")
+plt.ylabel("OD600 (-)")
 
-# fig.savefig("images/OD600_overlay.png", dpi=600)
-# # End GrowthRate.py
+fig.savefig("images/OD600_overlay.png", dpi=600)
+# End GrowthRate.py
