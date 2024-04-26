@@ -24,6 +24,21 @@ pro_glu_15 = np.array([od600_glu_day1[3], od600_glu_day2[3], od600_glu_final[3]]
 pro_glu_2 = np.array([od600_glu_day1[4], od600_glu_day2[4], od600_glu_final[4]])
 pro_glu_3 = np.array([od600_glu_day1[5], od600_glu_day2[5], od600_glu_final[5]])
 
+ph_pro_glu_0 = np.array([ph_glu_day1[0], ph_glu_day2[0], ph_glu_final[0]])
+ph_pro_glu_05 = np.array([ph_glu_day1[1], ph_glu_day2[1], ph_glu_final[1]])
+ph_pro_glu_1 = np.array([ph_glu_day1[2], ph_glu_day2[2], ph_glu_final[2]])
+ph_pro_glu_15 = np.array([ph_glu_day1[3], ph_glu_day2[3], ph_glu_final[3]])
+ph_pro_glu_2 = np.array([ph_glu_day1[4], ph_glu_day2[4], ph_glu_final[4]])
+ph_pro_glu_3 = np.array([ph_glu_day1[5], ph_glu_day2[5], ph_glu_final[5]])
+
+ph_pro_no_glu_0 = np.array([ph_no_glu_day1[0], ph_no_glu_day2[0], ph_no_glu_final[0]])
+ph_pro_no_glu_05 = np.array([ph_no_glu_day1[1], ph_no_glu_day2[1], ph_no_glu_final[1]])
+ph_pro_no_glu_1 = np.array([ph_no_glu_day1[2], ph_no_glu_day2[2], ph_no_glu_final[2]])
+ph_pro_no_glu_15 = np.array([ph_no_glu_day1[3], ph_no_glu_day2[3], ph_no_glu_final[3]])
+ph_pro_no_glu_2 = np.array([ph_no_glu_day1[4], ph_no_glu_day2[4], ph_no_glu_final[4]])
+ph_pro_no_glu_3 = np.array([ph_no_glu_day1[5], ph_no_glu_day2[5], ph_no_glu_final[5]])
+
+
 pro_no_glu_0 = np.array(
     [od600_no_glu_day1[0], od600_no_glu_day2[0], od600_no_glu_final[0]]
 )
@@ -218,3 +233,125 @@ plt.xlabel("Time (day)")
 plt.ylabel("OD600 (-)")
 
 fig.savefig("images/OD600_overlay.png", dpi=600)
+
+fig_ph = plt.figure(figsize=(5, 5))
+
+plt.plot([0, 1, 4], ph_pro_glu_0, color="#ADD8E6")
+plt.plot([0, 1, 4], ph_pro_glu_05, color="#3399FF")
+plt.plot([0, 1, 4], ph_pro_glu_1, color="#0000FF")
+plt.plot([0, 1, 4], ph_pro_glu_15, color="#0000CC")
+plt.plot([0, 1, 4], ph_pro_glu_2, color="#000099")
+plt.plot([0, 1, 4], ph_pro_glu_3, color="#000066")
+
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_glu_0,
+    color="#ADD8E6",
+    zorder=10,
+    label="0.0 M",
+)
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_glu_05,
+    color="#3399FF",
+    zorder=10,
+    label="0.050 M",
+)
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_glu_1,
+    color="#0000FF",
+    zorder=10,
+    label="0.10 M",
+)
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_glu_15,
+    color="#0000CC",
+    zorder=10,
+    label="0.15 M",
+)
+
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_glu_2,
+    color="#000099",
+    zorder=10,
+    label="0.20 M",
+)
+
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_glu_3,
+    color="#000066",
+    zorder=10,
+    label="0.30 M",
+)
+
+plt.legend(title="Propionic acid conc. (M)", loc="lower left")
+plt.tick_params(direction="in")
+plt.xlabel("Time (day)")
+plt.ylabel("pH (-)")
+
+fig_ph.savefig("images/pH_glu.png", dpi=600)
+
+fig_ph = plt.figure(figsize=(5, 5))
+
+plt.plot([0, 1, 4], ph_pro_no_glu_0, color="#FFA07A")
+plt.plot([0, 1, 4], ph_pro_no_glu_05, color="#FF6347")
+plt.plot([0, 1, 4], ph_pro_no_glu_1, color="#FF4500")
+plt.plot([0, 1, 4], ph_pro_no_glu_15, color="#FF0000")
+plt.plot([0, 1, 4], ph_pro_no_glu_2, color="#CC0000")
+plt.plot([0, 1, 4], ph_pro_no_glu_3, color="#990000")
+
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_no_glu_0,
+    color="#FFA07A",
+    zorder=10,
+    label="0.0 M",
+)
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_no_glu_05,
+    color="#FF6347",
+    zorder=10,
+    label="0.050 M",
+)
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_no_glu_1,
+    color="#FF4500",
+    zorder=10,
+    label="0.10 M",
+)
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_no_glu_15,
+    color="#FF0000",
+    zorder=10,
+    label="0.15 M",
+)
+
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_no_glu_2,
+    color="#CC0000",
+    zorder=10,
+    label="0.20 M",
+)
+
+plt.scatter(
+    [0, 1, 4],
+    ph_pro_no_glu_3,
+    color="#990000",
+    zorder=10,
+    label="0.30 M",
+)
+
+plt.legend(title="Propionic acid conc. (M)", loc="lower left")
+plt.tick_params(direction="in")
+plt.xlabel("Time (day)")
+plt.ylabel("pH (-)")
+
+fig_ph.savefig("images/pH_no_glu.png", dpi=600)
