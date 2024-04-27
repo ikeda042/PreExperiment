@@ -86,7 +86,7 @@
 
 ![alt text](images/OD600_no_glu.png)
 
-## pH0の推移
+## pHの推移
 
 ### 補糖あり
 
