@@ -180,8 +180,14 @@ class GrowthRate:
         ret = ""
         return ret
 
-    def parse_data(self) -> None:
-        pass
+    def plot_growth(self) -> None:
+        fig = plt.figure(figsize=(5, 5))
+        plt.plot([0, 1, 4], self.pro_glu_0, color="#ADD8E6")
+        plt.plot([0, 1, 4], self.pro_glu_05, color="#3399FF")
+        plt.plot([0, 1, 4], self.pro_glu_1, color="#0000FF")
+        plt.plot([0, 1, 4], self.pro_glu_15, color="#0000CC")
+        plt.plot([0, 1, 4], self.pro_glu_2, color="#000099")
+        plt.plot([0, 1, 4], self.pro_glu_3, color="#000066")
 
 
 # 検量線作成用のデータ
