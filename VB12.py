@@ -22,3 +22,14 @@ VB12_propionic_acid_p_2 = [
 VB12_propionic_acid_n_2 = [
     (OD360 - 0.003) / 0.021 for OD360 in OD360_propionic_acid_n_2
 ]
+
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=(8, 4))
+
+plt.scatter(OD360_propionic_acid_n_1, VB12_propionic_acid_n_1, color="black")
+plt.scatter(OD360_propionic_acid_p_1, VB12_propionic_acid_p_1, color="red")
+plt.scatter(OD360_propionic_acid_n_2, VB12_propionic_acid_n_2, color="blue")
+plt.scatter(OD360_propionic_acid_p_2, VB12_propionic_acid_p_2, color="green")
+
+fig.savefig("images/VB121.png", dpi=500)
