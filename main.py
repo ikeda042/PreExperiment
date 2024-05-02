@@ -33,6 +33,8 @@ conc: list[float] = [0, 0.25, 0.5, 1, 2, 2.5, 4, 5]
 ### OD360 nm ###
 OD360: list[float] = [0, 0.005, 0.009, 0.02, 0.04, 0.047, 0.087, 0.103]
 
-a = VB12(conc, OD360, blank)
-print(a)
-print(a.convert_OD360(OD360=1))
+
+# 実行例
+vb12 = VB12(conc, OD360, blank)
+print(vb12)
+print([vb12.convert_OD360(i) for i in [0.01, 0.02, 0.03, 0.04, 0.05]])
