@@ -180,7 +180,7 @@ class GrowthRate:
         ret = ""
         return ret
 
-    def plot_growth(self) -> None:
+    def plot_growth_with_glu(self) -> None:
         fig = plt.figure(figsize=(5, 5))
         plt.plot([0, 1, 4], self.pro_glu_0, color="#ADD8E6")
         plt.plot([0, 1, 4], self.pro_glu_05, color="#3399FF")
@@ -232,6 +232,12 @@ class GrowthRate:
             zorder=10,
             label=f"0.30 M µ={self.pro_glu_3_mu} " + r"$day^{-1}$",
         )
+        plt.legend(title="Propionic acid conc. (M)", loc="upper left")
+        plt.tick_params(direction="in")
+        plt.xlabel("Time (day)")
+        plt.ylabel("OD600 (-)")
+        plt.yscale("log")
+        fig.savefig("images/OD600_glu.png", dpi=600)
 
 
 # 検量線作成用のデータ
