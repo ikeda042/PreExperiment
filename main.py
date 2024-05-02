@@ -12,17 +12,39 @@ class VB12:
         self.OD360: list[float] = [
             OD360[i] - self.blank if i != 0 else OD360[i] for i in range(len(OD360))
         ]
-        X, Y = np.array([[1, i] for i in self.conc]), np.array(self.OD360).reshape(
-            -1, 1
+        self.X, self.Y = np.array([[1, i] for i in self.conc]), np.array(
+            self.OD360
+        ).reshape(-1, 1)
+        self.theta: list[float] = inv(self.X.T @ self.X) @ self.X.T @ self.Y
+        self.r2: float = R2_(
+            self.Y, [self.theta[0] + self.theta[1] * i for i in self.conc]
         )
-        self.theta: list[float] = inv(X.T @ X) @ X.T @ Y
-        self.r2: float = R2_(Y, [self.theta[0] + self.theta[1] * i for i in self.conc])
 
     def __repr__(self) -> str:
         return f"STD. line : {self.theta[1][0]:.3f}C_V.B.12 + {self.theta[0][0]:.3f}, R^2 = {self.r2:.3f}"
 
     def convert_OD360(self, OD360: float) -> float:
         return (OD360 - self.theta[0][0]) / self.theta[1][0]
+
+    def plot_std(self) -> None:
+        fig = plt.figure(figsize=(8, 4))
+        plt.tick_params(direction="in")
+        plt.xlabel(r"$Conc._\text{V.B.12}$  (µg/ml)")
+        plt.ylabel(r"$\text{OD}_{360}$")
+        plt.scatter(self.conc, self.OD360, color="black")
+        plt.plot(conc, [self.theta[0] + self.theta[1] * i for i in conc], color="red")
+        OD360_tex: str = r"$\text{OD}_{360}$"
+        plt.text(
+            1,
+            0.08,
+            f"{OD360_tex} = {self.theta[1][0]:.3f}"
+            + r"$C_\text{V.B.12}$"
+            + f" + {self.theta[0][0]:.3f} ",
+            fontsize=12,
+        )
+        r2: float = R2_(self.Y, [self.theta[0] + self.theta[1] * i for i in conc])
+        plt.text(1, 0.07, r"$R^2 =$" + f"{r2:.3f}", fontsize=12)
+        fig.savefig("out_Standard.png", dpi=500)
 
 
 class GrowthData(BaseModel):
@@ -532,6 +554,7 @@ OD360: list[float] = [0, 0.005, 0.009, 0.02, 0.04, 0.047, 0.087, 0.103]
 vb12 = VB12(conc, OD360, blank)
 print(vb12)
 print([vb12.convert_OD360(i) for i in [0.01, 0.02, 0.03, 0.04, 0.05]])
+vb12.plot_std()
 
 
 # 比増殖速度の計算例
