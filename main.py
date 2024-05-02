@@ -455,6 +455,67 @@ class GrowthRate:
         plt.ylabel("pH (-)")
 
         fig_ph.savefig("out_pH_glu.png", dpi=600)
+        fig_ph.clf()
+
+    def plot_pH_without_glu(self) -> None:
+        fig_ph = plt.figure(figsize=(5, 5))
+        plt.plot([0, 1, 4], self.ph_pro_without_glu_0, color="#FFA07A")
+        plt.plot([0, 1, 4], self.ph_pro_without_glu_05, color="#FF6347")
+        plt.plot([0, 1, 4], self.ph_pro_without_glu_1, color="#FF4500")
+        plt.plot([0, 1, 4], self.ph_pro_without_glu_15, color="#FF0000")
+        plt.plot([0, 1, 4], self.ph_pro_without_glu_2, color="#CC0000")
+        plt.plot([0, 1, 4], self.ph_pro_without_glu_3, color="#990000")
+
+        plt.scatter(
+            [0, 1, 4],
+            self.ph_pro_without_glu_0,
+            color="#FFA07A",
+            zorder=10,
+            label="0.0 M",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.ph_pro_without_glu_05,
+            color="#FF6347",
+            zorder=10,
+            label="0.050 M",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.ph_pro_without_glu_1,
+            color="#FF4500",
+            zorder=10,
+            label="0.10 M",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.ph_pro_without_glu_15,
+            color="#FF0000",
+            zorder=10,
+            label="0.15 M",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.ph_pro_without_glu_2,
+            color="#CC0000",
+            zorder=10,
+            label="0.20 M",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.ph_pro_without_glu_3,
+            color="#990000",
+            zorder=10,
+            label="0.30 M",
+        )
+
+        plt.legend(title="Propionic acid conc. (M)", loc="lower left")
+        plt.tick_params(direction="in")
+        plt.xlabel("Time (day)")
+        plt.ylabel("pH (-)")
+
+        fig_ph.savefig("out_pH_without_glu.png", dpi=600)
+        fig_ph.clf()
 
 
 # 検量線作成用のデータ
