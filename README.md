@@ -9,9 +9,9 @@
 [P.Shermaniiに関する実験データ](P_S_01.md)
 
 
-# Pythonデータ処理コード
+# Pythonデータ解析
 
-[データ処理コード](main.py)
+[データ解析コード](main.py)
 
 # Setup a python virtual environment 
 
