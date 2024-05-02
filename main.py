@@ -131,6 +131,51 @@ class GrowthRate:
             ]
         )
 
+        self.pro_glu_0_mu = round(
+            (np.log(self.pro_glu_0[1]) - np.log(self.pro_glu_0[0])) / 1, 2
+        )
+        self.pro_glu_05_mu = round(
+            (np.log(self.pro_glu_05[1]) - np.log(self.pro_glu_05[0])) / 1, 2
+        )
+        self.pro_glu_1_mu = round(
+            (np.log(self.pro_glu_1[1]) - np.log(self.pro_glu_1[0])) / 1, 2
+        )
+        self.pro_glu_15_mu = round(
+            (np.log(self.pro_glu_15[1]) - np.log(self.pro_glu_15[0])) / 1, 2
+        )
+        self.pro_glu_2_mu = round(
+            (np.log(self.pro_glu_2[1]) - np.log(self.pro_glu_2[0])) / 1, 2
+        )
+        self.pro_glu_3_mu = round(
+            (np.log(self.pro_glu_3[1]) - np.log(self.pro_glu_3[0])) / 1, 2
+        )
+        self.pro_without_glu_0_mu = round(
+            (np.log(self.pro_without_glu_0[1]) - np.log(self.pro_without_glu_0[0])) / 1,
+            2,
+        )
+        self.pro_without_glu_05_mu = round(
+            (np.log(self.pro_without_glu_05[1]) - np.log(self.pro_without_glu_05[0]))
+            / 1,
+            2,
+        )
+        self.pro_without_glu_1_mu = round(
+            (np.log(self.pro_without_glu_1[1]) - np.log(self.pro_without_glu_1[0])) / 1,
+            2,
+        )
+        self.pro_without_glu_15_mu = round(
+            (np.log(self.pro_without_glu_15[1]) - np.log(self.pro_without_glu_15[0]))
+            / 1,
+            2,
+        )
+        self.pro_without_glu_2_mu = round(
+            (np.log(self.pro_without_glu_2[1]) - np.log(self.pro_without_glu_2[0])) / 1,
+            2,
+        )
+        self.pro_without_glu_3_mu = round(
+            (np.log(self.pro_without_glu_3[1]) - np.log(self.pro_without_glu_3[0])) / 1,
+            2,
+        )
+
     def __repr__(self) -> str:
         ret = ""
         return ret
