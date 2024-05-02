@@ -532,3 +532,45 @@ OD360: list[float] = [0, 0.005, 0.009, 0.02, 0.04, 0.047, 0.087, 0.103]
 vb12 = VB12(conc, OD360, blank)
 print(vb12)
 print([vb12.convert_OD360(i) for i in [0.01, 0.02, 0.03, 0.04, 0.05]])
+
+
+# 比増殖速度の計算例
+# 　実測値を以下のようにクラスに渡す
+propionic_acid_conc = [0, 0.05, 0.1, 0.15, 0.2, 0.3]
+od600_glu_day1 = [0.563, 0.5, 0.488, 0.481, 0.475, 0.492]
+od600_no_glu_day1 = [0.504, 0.504, 0.495, 0.491, 0.48, 0.491]
+ph_glu_day1 = [6.516, 6.439, 6.415, 6.477, 6.487, 6.602]
+ph_no_glu_day1 = [6.457, 6.426, 6.428, 6.529, 6.576, 6.587]
+
+od600_glu_day2 = [1.81, 0.764, 0.536, 0.592, 0.599, 0.519]
+od600_no_glu_day2 = [1.74, 0.475, 0.674, 0.628, 0.541, 0.683]
+ph_glu_day2 = [6.442, 6.44, 6.466, 6.519, 6.535, 6.651]
+ph_no_glu_day2 = [6.09, 6.641, 6.47, 6.57, 6.591, 6.422]
+
+od600_glu_final = [28.95, 12.2, 2.88, 1.152, 0.843, 0.693]
+od600_no_glu_final = [34.2, 15.45, 3.22, 1.152, 0.864, 0.693]
+ph_glu_final = [4.754, 5.303, 6.216, 6.532, 6.506, 6.638]
+ph_no_glu_final = [4.603, 5.11, 6.143, 6.44, 6.524, 6.88]
+
+data = GrowthData(
+    propionic_acid_conc=propionic_acid_conc,
+    OD600_with_glu_DAY1=od600_glu_day1,
+    OD600_without_glu_DAY1=od600_no_glu_day1,
+    pH_glu_DAY1=ph_glu_day1,
+    pH_without_glu_DAY1=ph_no_glu_day1,
+    OD600_with_glu_DAY2=od600_glu_day2,
+    OD600_without_glu_DAY2=od600_no_glu_day2,
+    pH_glu_DAY2=ph_glu_day2,
+    pH_without_glu_DAY2=ph_no_glu_day2,
+    OD600_with_glu_DAY3=od600_glu_final,
+    OD600_without_glu_DAY3=od600_no_glu_final,
+    pH_glu_DAY3=ph_glu_final,
+    pH_without_glu_DAY3=ph_no_glu_final,
+)
+
+# プロットの実行
+growth_rate = GrowthRate(data)
+growth_rate.plot_growth_with_glu()
+growth_rate.plot_growth_without_glu()
+growth_rate.plot_pH_with_glu()
+growth_rate.plot_pH_without_glu()
