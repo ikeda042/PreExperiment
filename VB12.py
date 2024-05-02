@@ -40,10 +40,71 @@ plt.plot(
     color="red",
 )
 
+plt.scatter(
+    OD360_propionic_acid_n_1[0],
+    VB12_propionic_acid_n_1[0],
+    color="tab:blue",
+    alpha=0.05,
+    label=f"Propionic Acid {PROPIONIC_ACID[0]}M",
+)
 
 plt.scatter(
-    OD360_propionic_acid_n_1, VB12_propionic_acid_n_1, color="tab:blue", alpha=1
+    OD360_propionic_acid_n_1[1],
+    VB12_propionic_acid_n_1[1],
+    color="tab:blue",
+    alpha=0.2,
+    label=f"Propionic Acid {PROPIONIC_ACID[1]}M",
 )
+
+plt.scatter(
+    OD360_propionic_acid_n_1[2],
+    VB12_propionic_acid_n_1[2],
+    color="tab:blue",
+    alpha=0.4,
+    label=f"Propionic Acid {PROPIONIC_ACID[2]}M",
+)
+
+plt.scatter(
+    OD360_propionic_acid_n_1[3],
+    VB12_propionic_acid_n_1[3],
+    color="tab:blue",
+    alpha=0.6,
+    label=f"Propionic Acid {PROPIONIC_ACID[3]}M",
+)
+
+plt.scatter(
+    OD360_propionic_acid_n_1[4],
+    VB12_propionic_acid_n_1[4],
+    color="tab:blue",
+    alpha=0.8,
+    label=f"Propionic Acid {PROPIONIC_ACID[4]}M",
+)
+
+plt.scatter(
+    OD360_propionic_acid_n_1[5],
+    VB12_propionic_acid_n_1[5],
+    color="tab:blue",
+    alpha=1,
+    label=f"Propionic Acid {PROPIONIC_ACID[5]}M",
+)
+
+plt.scatter(
+    OD360_propionic_acid_p_1[0],
+    VB12_propionic_acid_p_1[0],
+    color="tab:red",
+    alpha=0.05,
+    label=f"Propionic Acid {PROPIONIC_ACID[0]}M",
+)
+
+plt.scatter(
+    OD360_propionic_acid_p_1[1],
+    VB12_propionic_acid_p_1[1],
+    color="tab:red",
+    alpha=0.2,
+    label=f"Propionic Acid {PROPIONIC_ACID[1]}M",
+)
+
+
 plt.scatter(OD360_propionic_acid_p_1, VB12_propionic_acid_p_1, color="tab:red", alpha=1)
 
 # それぞれの点からx軸に対して垂直に線をおろす
@@ -70,6 +131,7 @@ fig.savefig("images/VB121.png", dpi=500)
 
 fig.clf()
 
+################################################################################################
 # n = 2
 fig = plt.figure(figsize=(8, 4))
 
