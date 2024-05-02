@@ -27,6 +27,8 @@ VB12_propionic_acid_n_1 = [OD_to_conc(i) for i in OD360_propionic_acid_n_1]
 VB12_propionic_acid_p_2 = [OD_to_conc(i) for i in OD360_propionic_acid_p_2]
 VB12_propionic_acid_n_2 = [OD_to_conc(i) for i in OD360_propionic_acid_n_2]
 
+print(VB12_propionic_acid_p_2)
+print(VB12_propionic_acid_n_2)
 
 # n = 1
 fig = plt.figure(figsize=(12, 7))
@@ -187,7 +189,7 @@ plt.tick_params(direction="in")
 fig_propionic_acid_and_VB12_n1.savefig("images/VB12_propionic_acid_n1.png", dpi=500)
 ################################################################################################
 # n = 2
-fig = plt.figure(figsize=(12, 5))
+fig = plt.figure(figsize=(12, 7))
 
 plt.plot(
     [0, maxod],
