@@ -189,6 +189,50 @@ class GrowthRate:
         plt.plot([0, 1, 4], self.pro_glu_2, color="#000099")
         plt.plot([0, 1, 4], self.pro_glu_3, color="#000066")
 
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_glu_0,
+            color="#ADD8E6",
+            zorder=10,
+            label=f"0.0 M µ={self.pro_glu_0_mu} " + r"$day^{-1}$",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_glu_05,
+            color="#3399FF",
+            zorder=10,
+            label=f"0.050 M µ={self.pro_glu_05_mu} " + r"$day^{-1}$",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_glu_1,
+            color="#0000FF",
+            zorder=10,
+            label=f"0.10 M µ={self.pro_glu_1_mu} " + r"$day^{-1}$",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_glu_15,
+            color="#0000CC",
+            zorder=10,
+            label=f"0.15 M µ={self.pro_glu_15_mu} " + r"$day^{-1}$",
+        )
+
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_glu_2,
+            color="#000099",
+            zorder=10,
+            label=f"0.20 M µ={self.pro_glu_2_mu} " + r"$day^{-1}$",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_glu_3,
+            color="#000066",
+            zorder=10,
+            label=f"0.30 M µ={self.pro_glu_3_mu} " + r"$day^{-1}$",
+        )
+
 
 # 検量線作成用のデータ
 
