@@ -25,22 +25,6 @@ class VB12:
         return (OD360 - self.theta[0][0]) / self.theta[1][0]
 
 
-# 検量線作成用のデータ
-
-### ブランクのOD360 ###
-blank: float = 0.002
-### conc. V.B12　標準液(µg/ml) ###
-conc: list[float] = [0, 0.25, 0.5, 1, 2, 2.5, 4, 5]
-### OD360 nm ###
-OD360: list[float] = [0, 0.005, 0.009, 0.02, 0.04, 0.047, 0.087, 0.103]
-
-
-# 実行例
-vb12 = VB12(conc, OD360, blank)
-print(vb12)
-print([vb12.convert_OD360(i) for i in [0.01, 0.02, 0.03, 0.04, 0.05]])
-
-
 class GrowthData(BaseModel):
     propionic_acid_conc: list[float] = [0, 0.05, 0.1, 0.15, 0.2, 0.3]
     OD600_with_glu_DAY1: list[float] | None
@@ -64,4 +48,21 @@ class GrowthRate:
         self.data: GrowthData = data
 
     def __repr__(self) -> str:
-        return "Growth Rate"
+        ret = ""
+        return ret
+
+
+# 検量線作成用のデータ
+
+### ブランクのOD360 ###
+blank: float = 0.002
+### conc. V.B12　標準液(µg/ml) ###
+conc: list[float] = [0, 0.25, 0.5, 1, 2, 2.5, 4, 5]
+### OD360 nm ###
+OD360: list[float] = [0, 0.005, 0.009, 0.02, 0.04, 0.047, 0.087, 0.103]
+
+
+# 実行例
+vb12 = VB12(conc, OD360, blank)
+print(vb12)
+print([vb12.convert_OD360(i) for i in [0.01, 0.02, 0.03, 0.04, 0.05]])
