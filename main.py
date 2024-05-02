@@ -297,7 +297,7 @@ class GrowthRate:
         plt.xlabel("Time (day)")
         plt.ylabel("OD600 (-)")
         plt.yscale("log")
-        fig.savefig("images/OD600_no_glu.png", dpi=600)
+        fig.savefig("out_OD600_without_glu.png", dpi=600)
 
 
 # 検量線作成用のデータ
