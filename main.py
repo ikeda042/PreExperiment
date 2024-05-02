@@ -238,14 +238,66 @@ class GrowthRate:
         plt.ylabel("OD600 (-)")
         plt.yscale("log")
         fig.savefig("out_OD600_glu.png", dpi=600)
+        fig.clf()
 
     def plot_growth_without_glu(self) -> None:
+        fig = plt.figure(figsize=(5, 5))
         plt.plot([0, 1, 4], self.pro_without_glu_0, color="#FFA07A")
         plt.plot([0, 1, 4], self.pro_without_glu_05, color="#FF6347")
         plt.plot([0, 1, 4], self.pro_without_glu_1, color="#FF4500")
         plt.plot([0, 1, 4], self.pro_without_glu_15, color="#FF0000")
         plt.plot([0, 1, 4], self.pro_without_glu_2, color="#CC0000")
         plt.plot([0, 1, 4], self.pro_without_glu_3, color="#990000")
+
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_without_glu_0,
+            color="#FFA07A",
+            zorder=10,
+            label=f"0.0 M µ={self.pro_without_glu_0_mu} " + r"$day^{-1}$",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_without_glu_05,
+            color="#FF6347",
+            zorder=10,
+            label=f"0.050 M µ={self.pro_without_glu_05_mu} " + r"$day^{-1}$",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_without_glu_1,
+            color="#FF4500",
+            zorder=10,
+            label=f"0.10 M µ={self.pro_without_glu_1_mu} " + r"$day^{-1}$",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_without_glu_15,
+            color="#FF0000",
+            zorder=10,
+            label=f"0.15 M µ={self.pro_without_glu_15_mu} " + r"$day^{-1}$",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_without_glu_2,
+            color="#CC0000",
+            zorder=10,
+            label=f"0.20 M µ={self.pro_without_glu_2_mu} " + r"$day^{-1}$",
+        )
+        plt.scatter(
+            [0, 1, 4],
+            self.pro_without_glu_3,
+            color="#990000",
+            zorder=10,
+            label=f"0.30 M µ={self.pro_without_glu_3_mu} " + r"$day^{-1}$",
+        )
+
+        plt.legend(title="Propionic acid conc. (M)", loc="upper left")
+        plt.tick_params(direction="in")
+        plt.xlabel("Time (day)")
+        plt.ylabel("OD600 (-)")
+        plt.yscale("log")
+        fig.savefig("images/OD600_no_glu.png", dpi=600)
 
 
 # 検量線作成用のデータ
