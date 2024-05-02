@@ -53,39 +53,81 @@ class GrowthRate:
                 self.data.OD600_with_glu_DAY3[0],
             ]
         )
-        self.pro_glu_05 = np.array(
+        self.pro_glu_05: np.ndarray = np.array(
             [
                 self.data.OD600_with_glu_DAY1[1],
                 self.data.OD600_with_glu_DAY2[1],
                 self.data.OD600_with_glu_DAY3[1],
             ]
         )
-        self.pro_glu_1 = np.array(
+        self.pro_glu_1: np.ndarray = np.array(
             [
                 self.data.OD600_with_glu_DAY1[2],
                 self.data.OD600_with_glu_DAY2[2],
                 self.data.OD600_with_glu_DAY3[2],
             ]
         )
-        self.pro_glu_15 = np.array(
+        self.pro_glu_15: np.ndarray = np.array(
             [
                 self.data.OD600_with_glu_DAY1[3],
                 self.data.OD600_with_glu_DAY2[3],
                 self.data.OD600_with_glu_DAY3[3],
             ]
         )
-        self.pro_glu_2 = np.array(
+        self.pro_glu_2: np.ndarray = np.array(
             [
                 self.data.OD600_with_glu_DAY1[4],
                 self.data.OD600_with_glu_DAY2[4],
                 self.data.OD600_with_glu_DAY3[4],
             ]
         )
-        self.pro_glu_3 = np.array(
+        self.pro_glu_3: np.ndarray = np.array(
             [
                 self.data.OD600_with_glu_DAY1[5],
                 self.data.OD600_with_glu_DAY2[5],
                 self.data.OD600_with_glu_DAY3[5],
+            ]
+        )
+        self.pro_without_glu_0: np.ndarray = np.array(
+            [
+                self.data.OD600_without_glu_DAY1[0],
+                self.data.OD600_without_glu_DAY2[0],
+                self.data.OD600_without_glu_DAY3[0],
+            ]
+        )
+        self.pro_without_glu_05: np.ndarray = np.array(
+            [
+                self.data.OD600_without_glu_DAY1[1],
+                self.data.OD600_without_glu_DAY2[1],
+                self.data.OD600_without_glu_DAY3[1],
+            ]
+        )
+        self.pro_without_glu_1: np.ndarray = np.array(
+            [
+                self.data.OD600_without_glu_DAY1[2],
+                self.data.OD600_without_glu_DAY2[2],
+                self.data.OD600_without_glu_DAY3[2],
+            ]
+        )
+        self.pro_without_glu_15: np.ndarray = np.array(
+            [
+                self.data.OD600_without_glu_DAY1[3],
+                self.data.OD600_without_glu_DAY2[3],
+                self.data.OD600_without_glu_DAY3[3],
+            ]
+        )
+        self.pro_without_glu_2: np.ndarray = np.array(
+            [
+                self.data.OD600_without_glu_DAY1[4],
+                self.data.OD600_without_glu_DAY2[4],
+                self.data.OD600_without_glu_DAY3[4],
+            ]
+        )
+        self.pro_without_glu_3: np.ndarray = np.array(
+            [
+                self.data.OD600_without_glu_DAY1[5],
+                self.data.OD600_without_glu_DAY2[5],
+                self.data.OD600_without_glu_DAY3[5],
             ]
         )
 
