@@ -9,7 +9,7 @@ sns.set()
 
 
 def OD_to_conc(OD360):
-    return (OD360 - 0.003) / 0.021
+    return (OD360 + 0.003) / 0.021
 
 
 OD360_propionic_acid_p_1 = [0.444, 0.175, 0.162, 0.113, 0.135, 0.089]
@@ -31,13 +31,14 @@ VB12_propionic_acid_n_2 = [OD_to_conc(i) for i in OD360_propionic_acid_n_2]
 
 
 # n = 1
-fig = plt.figure(figsize=(10, 5))
-# STD line for VB12 OD360 = 0.021VB_conc + 0.003
+fig = plt.figure(figsize=(16, 9))
+# STD line for VB12 OD360 = 0.021VB_conc - 0.003
 
 plt.plot(
     [0, maxod],
-    [0.003, (maxod - 0.003) / 0.021],
+    [0.003, (maxod + 0.003) / 0.021],
     color="red",
+    label="Standard line (OD360 = 0.021VB_conc - 0.003)",
 )
 
 plt.scatter(
@@ -154,9 +155,9 @@ for i in range(len(OD360_propionic_acid_n_1)):
         alpha=0.5,
     )
 
-plt.legend()
-plt.xlabel(r"$Conc._\text{V.B.12}$  (µg/ml)")
-plt.ylabel(r"$\text{OD}_{360}$")
+plt.legend(loc="upper left")
+plt.ylabel(r"$Conc._\text{V.B.12}$  (µg/ml)")
+plt.xlabel(r"$\text{OD}_{360}$")
 plt.tick_params(direction="in")
 
 fig.savefig("images/VB121.png", dpi=500)
@@ -165,11 +166,11 @@ fig.clf()
 
 ################################################################################################
 # n = 2
-fig = plt.figure(figsize=(8, 4))
+fig = plt.figure(figsize=(12, 5))
 
 plt.plot(
     [0, maxod],
-    [0.003, (maxod - 0.003) / 0.021],
+    [0.003, (maxod + 0.003) / 0.021],
     color="red",
 )
 
