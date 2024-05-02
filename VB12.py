@@ -1,6 +1,6 @@
 # OD360 = 0.021C_V.B.12 + 0.003
 # V.B.12 = (OD360 - 0.003) / 0.021
-# PROPIONIC_ACID = [0, 0.05, 0.10, 0.15, 0.20, 0.30]
+PROPIONIC_ACID = [0, 0.05, 0.10, 0.15, 0.20, 0.30]
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -30,6 +30,7 @@ VB12_propionic_acid_p_2 = [OD_to_conc(i) for i in OD360_propionic_acid_p_2]
 VB12_propionic_acid_n_2 = [OD_to_conc(i) for i in OD360_propionic_acid_n_2]
 
 
+# n = 1
 fig = plt.figure(figsize=(8, 4))
 # STD line for VB12 OD360 = 0.021VB_conc + 0.003
 
@@ -60,18 +61,47 @@ for i in range(len(OD360_propionic_acid_n_1)):
         alpha=0.5,
     )
 
-
-# plt.scatter(
-#     OD360_propionic_acid_n_2, VB12_propionic_acid_n_2, color="tab:blue", alpha=1
-# )
-# plt.scatter(
-#     OD360_propionic_acid_p_2, VB12_propionic_acid_p_2, color="tab:blue", alpha=0.5
-# )
-
-plt.legend(["Standard line", "N", "P"])
+plt.legend(["Standard line", "Glu. - ", "Glu. +"])
 plt.xlabel(r"$Conc._\text{V.B.12}$  (µg/ml)")
 plt.ylabel(r"$\text{OD}_{360}$")
 plt.tick_params(direction="in")
+
 fig.savefig("images/VB121.png", dpi=500)
 
-print((0.44 - 0.003) / 0.021)
+fig.clf()
+
+# n = 2
+fig = plt.figure(figsize=(8, 4))
+
+plt.plot(
+    [0, maxod],
+    [0.003, (maxod - 0.003) / 0.021],
+    color="red",
+)
+
+plt.scatter(
+    OD360_propionic_acid_n_2, VB12_propionic_acid_n_2, color="tab:blue", alpha=1
+)
+plt.scatter(OD360_propionic_acid_p_2, VB12_propionic_acid_p_2, color="tab:red", alpha=1)
+
+# それぞれの点からx軸に対して垂直に線をおろす
+for i in range(len(OD360_propionic_acid_n_2)):
+    plt.plot(
+        [OD360_propionic_acid_n_2[i], OD360_propionic_acid_n_2[i]],
+        [0, VB12_propionic_acid_n_2[i]],
+        color="tab:blue",
+        alpha=0.5,
+    )
+    plt.plot(
+        [OD360_propionic_acid_p_2[i], OD360_propionic_acid_p_2[i]],
+        [0, VB12_propionic_acid_p_2[i]],
+        color="tab:red",
+        alpha=0.5,
+    )
+
+plt.legend(["Standard line", "Glu. - ", "Glu. +"])
+plt.xlabel(r"$Conc._\text{V.B.12}$  (µg/ml)")
+plt.ylabel(r"$\text{OD}_{360}$")
+plt.tick_params(direction="in")
+
+fig.savefig("images/VB122.png", dpi=500)
