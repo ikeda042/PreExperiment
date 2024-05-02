@@ -1,12 +1,11 @@
 import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score as R2_
 import numpy as np
 from numpy.linalg import inv
 
 
 class VB12:
-    def __init__(self, conc: list[float], OD360: list[float], blank: float):
+    def __init__(self, conc: list[float], OD360: list[float], blank: float) -> None:
         self.blank: float = blank
         self.conc: list[float] = conc
         self.OD360: list[float] = [
@@ -35,7 +34,5 @@ conc: list[float] = [0, 0.25, 0.5, 1, 2, 2.5, 4, 5]
 OD360: list[float] = [0, 0.005, 0.009, 0.02, 0.04, 0.047, 0.087, 0.103]
 
 a = VB12(conc, OD360, blank)
-
 print(a)
-
-print(a.convert_OD360(1))
+print(a.convert_OD360(OD360=1))
