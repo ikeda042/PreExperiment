@@ -239,6 +239,14 @@ class GrowthRate:
         plt.yscale("log")
         fig.savefig("out_OD600_glu.png", dpi=600)
 
+    def plot_growth_without_glu(self) -> None:
+        plt.plot([0, 1, 4], self.pro_without_glu_0, color="#FFA07A")
+        plt.plot([0, 1, 4], self.pro_without_glu_05, color="#FF6347")
+        plt.plot([0, 1, 4], self.pro_without_glu_1, color="#FF4500")
+        plt.plot([0, 1, 4], self.pro_without_glu_15, color="#FF0000")
+        plt.plot([0, 1, 4], self.pro_without_glu_2, color="#CC0000")
+        plt.plot([0, 1, 4], self.pro_without_glu_3, color="#990000")
+
 
 # 検量線作成用のデータ
 
