@@ -21,6 +21,9 @@ class VB12:
     def __repr__(self) -> str:
         return f"STD. line : {self.theta[1][0]:.3f}C_V.B.12 + {self.theta[0][0]:.3f}, R^2 = {self.r2:.3f}"
 
+    def convert_OD360(self, OD360: float) -> float:
+        return (OD360 - self.theta[0][0]) / self.theta[1][0]
+
 
 # 検量線作成用のデータ
 blank: float = 0.002
@@ -30,3 +33,5 @@ OD360: list[float] = [0, 0.005, 0.009, 0.02, 0.04, 0.047, 0.087, 0.103]
 a = VB12(conc, OD360, blank)
 
 print(a)
+
+print(a.convert_OD360(1))
