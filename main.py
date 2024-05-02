@@ -46,10 +46,55 @@ class GrowthData(BaseModel):
 class GrowthRate:
     def __init__(self, data: GrowthData) -> None:
         self.data: GrowthData = data
+        self.pro_glu_0: np.ndarray = np.array(
+            [
+                self.data.OD600_with_glu_DAY1[0],
+                self.data.OD600_with_glu_DAY2[0],
+                self.data.OD600_with_glu_DAY3[0],
+            ]
+        )
+        self.pro_glu_05 = np.array(
+            [
+                self.data.OD600_with_glu_DAY1[1],
+                self.data.OD600_with_glu_DAY2[1],
+                self.data.OD600_with_glu_DAY3[1],
+            ]
+        )
+        self.pro_glu_1 = np.array(
+            [
+                self.data.OD600_with_glu_DAY1[2],
+                self.data.OD600_with_glu_DAY2[2],
+                self.data.OD600_with_glu_DAY3[2],
+            ]
+        )
+        self.pro_glu_15 = np.array(
+            [
+                self.data.OD600_with_glu_DAY1[3],
+                self.data.OD600_with_glu_DAY2[3],
+                self.data.OD600_with_glu_DAY3[3],
+            ]
+        )
+        self.pro_glu_2 = np.array(
+            [
+                self.data.OD600_with_glu_DAY1[4],
+                self.data.OD600_with_glu_DAY2[4],
+                self.data.OD600_with_glu_DAY3[4],
+            ]
+        )
+        self.pro_glu_3 = np.array(
+            [
+                self.data.OD600_with_glu_DAY1[5],
+                self.data.OD600_with_glu_DAY2[5],
+                self.data.OD600_with_glu_DAY3[5],
+            ]
+        )
 
     def __repr__(self) -> str:
         ret = ""
         return ret
+
+    def parse_data(self) -> None:
+        pass
 
 
 # 検量線作成用のデータ
