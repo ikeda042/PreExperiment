@@ -176,6 +176,101 @@ class GrowthRate:
             2,
         )
 
+        self.ph_with_glu_day1: list[float] = np.array(self.data.pH_glu_DAY1)
+        self.ph_with_glu_day2: list[float] = np.array(self.data.pH_glu_DAY2)
+        self.ph_with_glu_day3: list[float] = np.array(self.data.pH_glu_DAY3)
+
+        self.ph_without_glu_day1: list[float] = np.array(self.data.pH_without_glu_DAY1)
+        self.ph_without_glu_day2: list[float] = np.array(self.data.pH_without_glu_DAY2)
+        self.ph_without_glu_day3: list[float] = np.array(self.data.pH_without_glu_DAY3)
+
+        self.ph_pro_glu_0: np.ndarray = np.array(
+            [
+                self.ph_with_glu_day1[0],
+                self.ph_with_glu_day2[0],
+                self.ph_with_glu_day3[0],
+            ]
+        )
+        self.ph_pro_glu_05: np.ndarray = np.array(
+            [
+                self.ph_with_glu_day1[1],
+                self.ph_with_glu_day2[1],
+                self.ph_with_glu_day3[1],
+            ]
+        )
+        self.ph_pro_glu_1: np.ndarray = np.array(
+            [
+                self.ph_with_glu_day1[2],
+                self.ph_with_glu_day2[2],
+                self.ph_with_glu_day3[2],
+            ]
+        )
+        self.ph_pro_glu_15: np.ndarray = np.array(
+            [
+                self.ph_with_glu_day1[3],
+                self.ph_with_glu_day2[3],
+                self.ph_with_glu_day3[3],
+            ]
+        )
+        self.ph_pro_glu_2: np.ndarray = np.array(
+            [
+                self.ph_with_glu_day1[4],
+                self.ph_with_glu_day2[4],
+                self.ph_with_glu_day3[4],
+            ]
+        )
+        self.ph_pro_glu_3: np.ndarray = np.array(
+            [
+                self.ph_with_glu_day1[5],
+                self.ph_with_glu_day2[5],
+                self.ph_with_glu_day3[5],
+            ]
+        )
+
+        self.ph_pro_without_glu_0: np.ndarray = np.array(
+            [
+                self.ph_without_glu_day1[0],
+                self.ph_without_glu_day2[0],
+                self.ph_without_glu_day3[0],
+            ]
+        )
+        self.ph_pro_without_glu_05: np.ndarray = np.array(
+            [
+                self.ph_without_glu_day1[1],
+                self.ph_without_glu_day2[1],
+                self.ph_without_glu_day3[1],
+            ]
+        )
+        self.ph_pro_without_glu_1: np.ndarray = np.array(
+            [
+                self.ph_without_glu_day1[2],
+                self.ph_without_glu_day2[2],
+                self.ph_without_glu_day3[2],
+            ]
+        )
+
+        self.ph_pro_without_glu_15: np.ndarray = np.array(
+            [
+                self.ph_without_glu_day1[3],
+                self.ph_without_glu_day2[3],
+                self.ph_without_glu_day3[3],
+            ]
+        )
+        self.ph_pro_without_glu_2: np.ndarray = np.array(
+            [
+                self.ph_without_glu_day1[4],
+                self.ph_without_glu_day2[4],
+                self.ph_without_glu_day3[4],
+            ]
+        )
+        self.ph_pro_without_glu_3: np.ndarray = np.array(
+            [
+                self.ph_without_glu_day1[5],
+                self.ph_without_glu_day2[5],
+                self.ph_without_glu_day3[5],
+            ]
+        )
+
     def __repr__(self) -> str:
         ret = ""
         return ret
@@ -298,6 +393,68 @@ class GrowthRate:
         plt.ylabel("OD600 (-)")
         plt.yscale("log")
         fig.savefig("out_OD600_without_glu.png", dpi=600)
+
+    def plot_pH_with_glu(self) -> None:
+        fig_ph = plt.figure(figsize=(5, 5))
+        plt.plot([0, 1, 4], self.ph, color="#ADD8E6")
+        plt.plot([0, 1, 4], ph_pro_glu_05, color="#3399FF")
+        plt.plot([0, 1, 4], ph_pro_glu_1, color="#0000FF")
+        plt.plot([0, 1, 4], ph_pro_glu_15, color="#0000CC")
+        plt.plot([0, 1, 4], ph_pro_glu_2, color="#000099")
+        plt.plot([0, 1, 4], ph_pro_glu_3, color="#000066")
+
+
+# plt.scatter(
+#     [0, 1, 4],
+#     ph_pro_glu_0,
+#     color="#ADD8E6",
+#     zorder=10,
+#     label="0.0 M",
+# )
+# plt.scatter(
+#     [0, 1, 4],
+#     ph_pro_glu_05,
+#     color="#3399FF",
+#     zorder=10,
+#     label="0.050 M",
+# )
+# plt.scatter(
+#     [0, 1, 4],
+#     ph_pro_glu_1,
+#     color="#0000FF",
+#     zorder=10,
+#     label="0.10 M",
+# )
+# plt.scatter(
+#     [0, 1, 4],
+#     ph_pro_glu_15,
+#     color="#0000CC",
+#     zorder=10,
+#     label="0.15 M",
+# )
+
+# plt.scatter(
+#     [0, 1, 4],
+#     ph_pro_glu_2,
+#     color="#000099",
+#     zorder=10,
+#     label="0.20 M",
+# )
+
+# plt.scatter(
+#     [0, 1, 4],
+#     ph_pro_glu_3,
+#     color="#000066",
+#     zorder=10,
+#     label="0.30 M",
+# )
+
+# plt.legend(title="Propionic acid conc. (M)", loc="lower left")
+# plt.tick_params(direction="in")
+# plt.xlabel("Time (day)")
+# plt.ylabel("pH (-)")
+
+# fig_ph.savefig("images/pH_glu.png", dpi=600)
 
 
 # 検量線作成用のデータ
