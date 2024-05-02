@@ -42,6 +42,7 @@ print([vb12.convert_OD360(i) for i in [0.01, 0.02, 0.03, 0.04, 0.05]])
 
 
 class GrowthData(BaseModel):
+    propionic_acid_conc: list[float] = [0, 0.05, 0.1, 0.15, 0.2, 0.3]
     OD600_with_glu_DAY1: list[float] | None
     OD600_without_glu_DAY1: list[float] | None
     pH_glu_DAY1: list[float] | None
@@ -59,17 +60,8 @@ class GrowthData(BaseModel):
 
 
 class GrowthRate:
-    def __init__(self, time: list[int], OD600: list[float]) -> None:
-        self.time: list[int] = time
-        self.OD600: list[float] = OD600
-        X, Y = np.array([[1, i] for i in self.time]), np.array(self.OD600).reshape(
-            -1, 1
-        )
-        self.theta: list[float] = inv(X.T @ X) @ X.T @ Y
-        self.r2: float = R2_(Y, [self.theta[0] + self.theta[1] * i for i in self.time])
+    def __init__(self, data: GrowthData) -> None:
+        self.data: GrowthData = data
 
     def __repr__(self) -> str:
-        return f"STD. line : {self.theta[1][0]:.3f}t + {self.theta[0][0]:.3f}, R^2 = {self.r2:.3f}"
-
-    def convert_time(self, OD600: float) -> float:
-        return (OD600 - self.theta[0][0]) / self.theta[1][0]
+        return "Growth Rate"
