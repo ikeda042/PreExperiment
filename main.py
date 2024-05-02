@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score as R2_
 import numpy as np
 from numpy.linalg import inv
+from pydantic import BaseModel
 
 
 class VB12:
@@ -38,3 +39,37 @@ OD360: list[float] = [0, 0.005, 0.009, 0.02, 0.04, 0.047, 0.087, 0.103]
 vb12 = VB12(conc, OD360, blank)
 print(vb12)
 print([vb12.convert_OD360(i) for i in [0.01, 0.02, 0.03, 0.04, 0.05]])
+
+
+class GrowthData(BaseModel):
+    OD600_with_glu_DAY1: list[float] | None
+    OD600_without_glu_DAY1: list[float] | None
+    pH_glu_DAY1: list[float] | None
+    pH_without_glu_DAY1: list[float] | None
+
+    OD600_with_glu_DAY2: list[float] | None
+    OD600_without_glu_DAY2: list[float] | None
+    pH_glu_DAY2: list[float] | None
+    pH_without_glu_DAY2: list[float] | None
+
+    OD600_with_glu_DAY3: list[float] | None
+    OD600_without_glu_DAY3: list[float] | None
+    pH_glu_DAY3: list[float] | None
+    pH_without_glu_DAY3: list[float] | None
+
+
+class GrowthRate:
+    def __init__(self, time: list[int], OD600: list[float]) -> None:
+        self.time: list[int] = time
+        self.OD600: list[float] = OD600
+        X, Y = np.array([[1, i] for i in self.time]), np.array(self.OD600).reshape(
+            -1, 1
+        )
+        self.theta: list[float] = inv(X.T @ X) @ X.T @ Y
+        self.r2: float = R2_(Y, [self.theta[0] + self.theta[1] * i for i in self.time])
+
+    def __repr__(self) -> str:
+        return f"STD. line : {self.theta[1][0]:.3f}t + {self.theta[0][0]:.3f}, R^2 = {self.r2:.3f}"
+
+    def convert_time(self, OD600: float) -> float:
+        return (OD600 - self.theta[0][0]) / self.theta[1][0]
