@@ -31,7 +31,7 @@ VB12_propionic_acid_n_2 = [OD_to_conc(i) for i in OD360_propionic_acid_n_2]
 
 
 # n = 1
-fig = plt.figure(figsize=(8, 4))
+fig = plt.figure(figsize=(10, 5))
 # STD line for VB12 OD360 = 0.021VB_conc + 0.003
 
 plt.plot(
@@ -44,7 +44,7 @@ plt.scatter(
     OD360_propionic_acid_n_1[0],
     VB12_propionic_acid_n_1[0],
     color="tab:blue",
-    alpha=0.05,
+    alpha=0.1,
     label=f"Propionic Acid {PROPIONIC_ACID[0]}M",
 )
 
@@ -92,7 +92,7 @@ plt.scatter(
     OD360_propionic_acid_p_1[0],
     VB12_propionic_acid_p_1[0],
     color="tab:red",
-    alpha=0.05,
+    alpha=0.1,
     label=f"Propionic Acid {PROPIONIC_ACID[0]}M",
 )
 
@@ -102,6 +102,38 @@ plt.scatter(
     color="tab:red",
     alpha=0.2,
     label=f"Propionic Acid {PROPIONIC_ACID[1]}M",
+)
+
+plt.scatter(
+    OD360_propionic_acid_p_1[2],
+    VB12_propionic_acid_p_1[2],
+    color="tab:red",
+    alpha=0.4,
+    label=f"Propionic Acid {PROPIONIC_ACID[2]}M",
+)
+
+plt.scatter(
+    OD360_propionic_acid_p_1[3],
+    VB12_propionic_acid_p_1[3],
+    color="tab:red",
+    alpha=0.6,
+    label=f"Propionic Acid {PROPIONIC_ACID[3]}M",
+)
+
+plt.scatter(
+    OD360_propionic_acid_p_1[4],
+    VB12_propionic_acid_p_1[4],
+    color="tab:red",
+    alpha=0.8,
+    label=f"Propionic Acid {PROPIONIC_ACID[4]}M",
+)
+
+plt.scatter(
+    OD360_propionic_acid_p_1[5],
+    VB12_propionic_acid_p_1[5],
+    color="tab:red",
+    alpha=1,
+    label=f"Propionic Acid {PROPIONIC_ACID[5]}M",
 )
 
 
@@ -122,7 +154,7 @@ for i in range(len(OD360_propionic_acid_n_1)):
         alpha=0.5,
     )
 
-plt.legend(["Standard line", "Glu. - ", "Glu. +"])
+plt.legend()
 plt.xlabel(r"$Conc._\text{V.B.12}$  (µg/ml)")
 plt.ylabel(r"$\text{OD}_{360}$")
 plt.tick_params(direction="in")
