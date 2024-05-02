@@ -10,7 +10,8 @@
 
 
 # Pythonデータ処理コード
-[データ処理コード]()
+
+[データ処理コード](main.py)
 
 # Setup a python virtual environment 
 
