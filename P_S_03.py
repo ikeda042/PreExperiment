@@ -87,45 +87,46 @@ import seaborn as sns
 
 sns.set()
 
-fig = plt.figure(figsize=(6, 6))
+fig = plt.figure(figsize=(7, 7))
 # OD360
 OD360_000s = [OD360_000_day1, OD360_000_day2, OD360_000_day3, OD360_000_day4, OD360_000_day5]
 days = [1, 2, 3, 4, 5]
-plt.plot(days, OD360_000s, label='OD360_000', marker='o')
+plt.plot(days, OD360_000s, label="P.A. 0.00 M", marker='o')
 
 OD360_005s = [OD360_005_day1, OD360_005_day2, OD360_005_day5]
 days = [1, 2, 5]
 
-plt.plot(days, OD360_005s, label='OD360_005', marker='o')
+plt.plot(days, OD360_005s, label='P.A. 0.05 M', marker='o')
 
 OD360_010s = [OD360_010_day1, OD360_010_day2, OD360_010_day5]
 days = [1, 2, 5]
 
-plt.plot(days, OD360_010s, label='OD360_010', marker='o')
+plt.plot(days, OD360_010s, label='P.A. 0.010 M', marker='o')
 
 OD360_015s = [OD360_015_day1, OD360_015_day2, OD360_015_day5]
 days = [1, 2, 5]
 
-plt.plot(days, OD360_015s, label='OD360_015', marker='o')
+plt.plot(days, OD360_015s, label='P.A. 0.015 M', marker='o')
 
 OD360_020s = [OD360_020_day1, OD360_020_day2, OD360_020_day5]
 days = [1, 2, 5]
 
-plt.plot(days, OD360_020s, label='OD360_020', marker='o')
+plt.plot(days, OD360_020s, label='P.A. 0.020 M', marker='o')
 
 OD360_030s = [OD360_030_day1, OD360_030_day2, OD360_030_day5]
 days = [1, 2, 5]
 
-plt.plot(days, OD360_030s, label='OD360_030', marker='o')
+plt.plot(days, OD360_030s, label='P.A. 0.030 M', marker='o')
 
 OD360_000s_GLC = [OD360_000_day1_GLC, OD360_000_day2_GLC, OD360_000_day3_GLC, OD360_000_day4_GLC, OD360_000_day5_GLC]
 days = [1, 2, 3, 4, 5]
 
-plt.plot(days, OD360_000s_GLC, label='OD360_000_GLC', marker='o')
+plt.plot(days, OD360_000s_GLC, label='P.A. 0.00 M (GLC +) ', marker='o')
 
 
 
 plt.xlabel('days')
-plt.ylabel('OD360')
+plt.ylabel(r"OD$_{360}$")
 plt.legend()
+plt.yscale('log')
 fig.savefig('OD360_P_S_3.png',dpi=500)
