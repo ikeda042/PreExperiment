@@ -80,3 +80,42 @@ pH_020_day5 = 6.318
 pH_030_day5 = 6.486
 
 pH_000_day5_GLC = 4.465
+
+
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=(6, 6))
+# OD360
+OD360_000s = [OD360_000_day1, OD360_000_day2, OD360_000_day3, OD360_000_day4, OD360_000_day5]
+days = [1, 2, 3, 4, 5]
+plt.plot(days, OD360_000s, label='OD360_000')
+
+OD360_005s = [OD360_005_day1, OD360_005_day2, OD360_000_day5]
+days = [1, 2, 5]
+
+plt.plot(days, OD360_005s, label='OD360_005')
+
+OD360_010s = [OD360_010_day1, OD360_010_day2, OD360_000_day5]
+days = [1, 2, 5]
+
+plt.plot(days, OD360_010s, label='OD360_010')
+
+OD360_015s = [OD360_015_day1, OD360_015_day2, OD360_000_day5]
+days = [1, 2, 5]
+
+plt.plot(days, OD360_015s, label='OD360_015')
+
+OD360_020s = [OD360_020_day1, OD360_020_day2, OD360_000_day5]
+days = [1, 2, 5]
+
+plt.plot(days, OD360_020s, label='OD360_020')
+
+OD360_030s = [OD360_030_day1, OD360_030_day2, OD360_000_day5]
+days = [1, 2, 5]
+
+plt.plot(days, OD360_030s, label='OD360_030')
+
+plt.xlabel('days')
+plt.ylabel('OD360')
+plt.legend()
+fig.savefig('OD360_000s.png')
