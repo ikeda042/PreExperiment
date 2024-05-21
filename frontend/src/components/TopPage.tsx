@@ -18,7 +18,13 @@ export default function TopPage() {
                         bgcolor: 'black',
                         color: 'white',
                         padding: '16px 24px',
-                        fontSize: '18px'
+                        fontSize: '18px',
+                        '&:hover': {
+                            bgcolor: 'black',
+                        },
+                        '&:active': {
+                            bgcolor: 'black',
+                        }
                     }}
                 >
                     VB12の検量線を作成する
@@ -31,7 +37,13 @@ export default function TopPage() {
                         bgcolor: 'black',
                         color: 'white',
                         padding: '16px 24px',
-                        fontSize: '18px'
+                        fontSize: '18px',
+                        '&:hover': {
+                            bgcolor: 'black',
+                        },
+                        '&:active': {
+                            bgcolor: 'black',
+                        }
                     }}
                 >
                     VB12の検量線を作成する
@@ -44,13 +56,18 @@ export default function TopPage() {
                         bgcolor: 'black',
                         color: 'white',
                         padding: '16px 24px',
-                        fontSize: '18px'
+                        fontSize: '18px',
+                        '&:hover': {
+                            bgcolor: 'black',
+                        },
+                        '&:active': {
+                            bgcolor: 'black',
+                        }
                     }}
                 >
                     VB12の検量線を作成する
                 </Button>
             </Stack>
-
 
             <Footer />
         </Box>
