@@ -10,9 +10,11 @@
 
 [P.Shermaniiに関する実験データ(3回目の実験)](P_S_03.md)
 
-# Pythonデータ解析
+# グルコース比色定量の検量線
 
-[データ解析コード](main.py)
+# 検量線の自動生成
+
+[データ解析コード](functions.py)
 
 # Setup a python virtual environment 
 
