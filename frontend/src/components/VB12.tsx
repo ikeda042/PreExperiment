@@ -78,16 +78,17 @@ const VB12 = () => {
                     </TableBody>
                 </Table>
                 <Box display="flex" justifyContent="center" marginTop={2}>
-                    <Button type="submit" variant="contained" color="primary" disabled={loading} startIcon={<AdbIcon />} sx={{ backgroundColor: '#000', color: '#fff' }}>
+                    <Button type="submit" variant="contained" disabled={loading} startIcon={<AdbIcon />} sx={{ backgroundColor: '#000', color: '#fff' }}>
                         検量線を作成する
                     </Button>
                 </Box>
-                {loading && <CircularProgress />}
+                <Box display="flex" justifyContent="center" marginTop={2}>
+                    {loading && <CircularProgress />}
+                </Box>
             </form>
             {error && <Alert severity="error">{error}</Alert>}
             {graphUrl && (
                 <div>
-                    <Typography variant="h6" gutterBottom>Generated Graph</Typography>
                     <img src={graphUrl} alt="Graph" style={{ maxWidth: '100%' }} />
                 </div>
             )}
