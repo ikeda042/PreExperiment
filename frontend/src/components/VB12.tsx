@@ -63,7 +63,7 @@ const VB12 = () => {
                     <TableBody>
                         {yValues.map((value, index) => (
                             <TableRow key={index}>
-                                <TableCell align="center">{[0, 0.1, 0.25, 0.5, 1, 2, 2.5, 4, 5][index]}</TableCell>
+                                <TableCell align="center">{["0.00", "0.10", "0.25", "0.50", "1.00", "2.00", "2.5", "4.00", "5.00"][index]}</TableCell>
                                 <TableCell align="center">
                                     <TextField
                                         type="number"
@@ -71,6 +71,10 @@ const VB12 = () => {
                                         onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(index, e.target.value)}
                                         required
                                         fullWidth
+                                        inputProps={{
+                                            min: value,
+                                            max: value
+                                        }}
                                     />
                                 </TableCell>
                             </TableRow>
