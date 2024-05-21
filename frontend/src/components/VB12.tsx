@@ -10,9 +10,11 @@ import {
     TextField,
     Button,
     Alert,
-    CircularProgress
+    CircularProgress,
+    Box
 } from '@mui/material';
 import axios from 'axios';
+import AdbIcon from '@mui/icons-material/Adb';
 
 const VB12 = () => {
     const [yValues, setYValues] = useState<string[]>(Array(9).fill(''));
@@ -31,9 +33,15 @@ const VB12 = () => {
         setError(null);
         setLoading(true);
         setGraphUrl('');
+        const yValuesNumber = yValues.map(Number);
+        if (yValuesNumber.some(isNaN)) {
+            setError('All y values must be numbers');
+            setLoading(false);
+            return;
+        }
 
         try {
-            const response = await axios.post('https://api.ikeda042api.net/api/lab/vb12', { y: yValues.map(Number) });
+            const response = await axios.post('https://api.ikeda042api.net/api/lab/vb12', { y: yValuesNumber });
             setGraphUrl(`https://api.ikeda042api.net/api/lab/lab_files/${response.data.graph_id}`);
         } catch (error: any) {
             setError(error.response ? error.response.data.error : 'An unexpected error occurred');
@@ -41,7 +49,6 @@ const VB12 = () => {
             setLoading(false);
         }
     };
-
     return (
         <Container>
             <Typography variant="h4" gutterBottom>VB12 Calibration Curve</Typography>
@@ -49,15 +56,15 @@ const VB12 = () => {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell>X</TableCell>
-                            <TableCell>Y</TableCell>
+                            <TableCell align="center" style={{ width: '50%' }}>X</TableCell>
+                            <TableCell align="center" style={{ width: '50%' }}>Y</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {yValues.map((value, index) => (
                             <TableRow key={index}>
-                                <TableCell>{[0, 0.1, 0.25, 0.5, 1, 2, 2.5, 4, 5][index]}</TableCell>
-                                <TableCell>
+                                <TableCell align="center">{[0, 0.1, 0.25, 0.5, 1, 2, 2.5, 4, 5][index]}</TableCell>
+                                <TableCell align="center">
                                     <TextField
                                         type="number"
                                         value={value}
@@ -70,9 +77,11 @@ const VB12 = () => {
                         ))}
                     </TableBody>
                 </Table>
-                <Button type="submit" variant="contained" color="primary" disabled={loading}>
-                    Submit
-                </Button>
+                <Box display="flex" justifyContent="center" marginTop={2}>
+                    <Button type="submit" variant="contained" color="primary" disabled={loading} startIcon={<AdbIcon />} sx={{ backgroundColor: '#000', color: '#fff' }}>
+                        検量線を作成する
+                    </Button>
+                </Box>
                 {loading && <CircularProgress />}
             </form>
             {error && <Alert severity="error">{error}</Alert>}
