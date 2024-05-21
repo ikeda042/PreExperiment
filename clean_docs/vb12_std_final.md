@@ -16,5 +16,5 @@
 | 4.0    | 0.087  |
 | 5.0   | 0.103  |
 
-![alt text](../images/Standard.png )
+![alt text](./VB12_std_final.png)
 
