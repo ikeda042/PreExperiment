@@ -11,7 +11,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
-import Logo from '@mui/icons-material/Logo'; // Import the logo
+import ScienceIcon from '@mui/icons-material/Science';
+import AdbIcon from '@mui/icons-material/Adb';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -73,7 +74,8 @@ export default function DrawerAppBar(props: Props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Logo /> {/* Add the logo */}
+                    <ScienceIcon sx={{ mr: 2 }} />
+                    <AdbIcon sx={{ mr: 2 }} />
                     <Typography
                         variant="h6"
                         component="div"
