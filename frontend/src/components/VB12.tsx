@@ -33,8 +33,8 @@ const VB12 = () => {
         setGraphUrl('');
 
         try {
-            const response = await axios.post('http://ikeda042.com/vb12', { y: yValues.map(Number) });
-            setGraphUrl(`http://ikeda042.com/lab_files/${response.data.graph_id}`);
+            const response = await axios.post('https://api.ikeda042api.net/api/lab/vb12', { y: yValues.map(Number) });
+            setGraphUrl(`https://api.ikeda042api.net/api/lab/lab_files/${response.data.graph_id}`);
         } catch (error: any) {
             setError(error.response ? error.response.data.error : 'An unexpected error occurred');
         } finally {
