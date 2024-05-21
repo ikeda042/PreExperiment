@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import DrawerAppBar from './NavigationBar';
 import Footer from './BottomNavBar';
 import { Stack } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default function TopPage() {
     return (
@@ -46,7 +47,7 @@ export default function TopPage() {
                         }
                     }}
                 >
-                    VB12の検量線を作成する
+                    グルコースの検量線を作成する
                 </Button>
                 <Button
                     variant="contained"
@@ -64,8 +65,9 @@ export default function TopPage() {
                             bgcolor: 'black',
                         }
                     }}
+                    startIcon={<GitHubIcon />}
                 >
-                    VB12の検量線を作成する
+                    予備実験ページ
                 </Button>
             </Stack>
 
