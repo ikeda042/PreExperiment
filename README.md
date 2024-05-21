@@ -10,7 +10,7 @@
 
 ## 検量線の自動生成
 
-自動生成サイト
+検量線自動生成サイト
 
 [https://overbookingikeda.com/](https://overbookingikeda.com/)
 
