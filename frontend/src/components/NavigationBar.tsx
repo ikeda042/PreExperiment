@@ -38,7 +38,7 @@ export default function DrawerAppBar(props: Props) {
                 component="div"
                 sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
-                マップオブジェクト編集コンソール
+                検量線自動生成
             </Typography>
 
             <Divider />
@@ -60,23 +60,14 @@ export default function DrawerAppBar(props: Props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav" sx={{ backgroundColor: '#000000', color: 'white' }}> {/* Change the background color to black */}
+            <AppBar component="nav" sx={{ backgroundColor: '#000000', color: 'white' }}>
                 <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    {/* <ScienceIcon sx={{ mr: 2 }} /> */}
+                    {/* IconButton component removed */}
                     <AdbIcon sx={{ mr: 2 }} />
                     <Typography
                         variant="h6"
                         component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' } }}
                     >
                         検量線自動生成
                     </Typography>
@@ -90,23 +81,7 @@ export default function DrawerAppBar(props: Props) {
                     </Box>
                 </Toolbar>
             </AppBar>
-            <nav>
-                <Drawer
-                    container={container}
-                    variant="temporary"
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
-                    }}
-                    sx={{
-                        display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
-                >
-                    {drawer}
-                </Drawer>
-            </nav>
+            {/* Drawer component removed */}
         </Box>
     );
 }
