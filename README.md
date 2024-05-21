@@ -6,9 +6,9 @@
 
 # P.Shermanii培養実験
 
-[P.Shermaniiに関する実験データ(一回目の実験)](P_S_01.md)
+[P.Shermaniiに関する実験データ(1回目の実験)](P_S_01.md)
 
-[P.Shermaniiに関する実験データ(一回目の実験)](P_S_03.md)
+[P.Shermaniiに関する実験データ(3回目の実験)](P_S_03.md)
 
 # Pythonデータ解析
 
