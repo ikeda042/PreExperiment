@@ -12,5 +12,5 @@
 | $\text{OD}_{340}$  A2                  | 0.000 | 0.130| 0.255| 0.383|0.510 | 0.639 |
 | $\Delta \text{OD}_{340}$           | 0.000 | 0.126| 0.257| 0.383|0.510 | 0.640 |
 
-![alt text](images/Glucose_01.png)
+![alt text](images/Glucose_01_std.png)
 
