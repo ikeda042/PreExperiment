@@ -1,8 +1,8 @@
 # プレ学生実験データ
 
-# V.B12 比色定量
+# V.B12 比色定量の検量線
 
-[V.B12比色定量に関する実験データ](VB12.md)
+[V.B12比色定量の検量線](clean_docs/vb12_std_final.md)
 
 # P.Shermanii培養実験
 
