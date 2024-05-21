@@ -1,5 +1,7 @@
 from functions import LinearRegression
+import seaborn as sns
 
+sns.set()
 conc: list[float] = [0, 0.5, 1.0, 1.5, 2.0, 2.5]
 
 # 検量線データ
@@ -72,4 +74,21 @@ PA_000_DELTA_OD340_GLC = delta(PA_000_A1_GLC, PA_000_A2_GLC)
 
 import matplotlib.pyplot as plt
 
-fig = plt.figure(figsize=[6, 6])
+fig = plt.figure(figsize=(9, 6))
+
+days = [0, 1, 4]
+
+plt.plot(days, PA_000_DELTA_OD340, label="P.A. 0.00 M", marker="o")
+plt.plot(days, PA_005_DElTA_OD340, label="P.A. 0.05 M", marker="o")
+plt.plot(days, PA_010_DELTA_OD340, label="P.A. 0.10 M", marker="o")
+plt.plot(days, PA_015_DELTA_OD340, label="P.A. 0.15 M", marker="o")
+plt.plot(days, PA_020_DELTA_OD340, label="P.A. 0.20 M", marker="o")
+plt.plot(days, PA_030_DELTA_OD340, label="P.A. 0.30 M", marker="o")
+plt.plot(days, PA_000_DELTA_OD340_GLC, label="P.A. 0.00 M (GLC +)", marker="o")
+
+plt.xlabel("Day")
+plt.ylabel(r"$\Delta OD_{340}$")
+plt.legend()
+# ticks to inside
+plt.tick_params(direction="in")
+plt.savefig("images/Glucose_01.png", dpi=400)
