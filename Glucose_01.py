@@ -106,3 +106,23 @@ plt.legend()
 # ticks to inside
 plt.tick_params(direction="in")
 plt.savefig("images/Glucose_01.png", dpi=400)
+plt.close(fig)
+
+fig = plt.figure(figsize=(9, 6))
+
+days = [0, 1, 4]
+
+plt.plot(days, PA_000_GLU_A1, label="P.A. 0.00 M", marker="o")
+plt.plot(days, PA_005_GLU_A1, label="P.A. 0.05 M", marker="o")
+plt.plot(days, PA_010_GLU_A1, label="P.A. 0.10 M", marker="o")
+plt.plot(days, PA_015_GLU_A1, label="P.A. 0.15 M", marker="o")
+plt.plot(days, PA_020_GLU_A1, label="P.A. 0.20 M", marker="o")
+plt.plot(days, PA_030_GLU_A1, label="P.A. 0.30 M", marker="o")
+plt.plot(days, PA_000_GLU_A1_GLC, label="P.A. 0.00 M (GLC +)", marker="o")
+
+plt.xlabel("Day")
+plt.ylabel("Glucose (mg/mL)")
+plt.legend()
+# ticks to inside
+plt.tick_params(direction="in")
+plt.savefig("images/Glucose_01_glu.png", dpi=400)
