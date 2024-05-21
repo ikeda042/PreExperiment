@@ -18,7 +18,7 @@
 
 [データ解析コード](functions.py)
 
-# Setup a python virtual environment 
+# Python環境のセットアップ
 
 1. Create a virtual environment for python3
 
@@ -36,9 +36,6 @@ source venv/bin/activate
 deactivate
 ```
 
-# Commands
-
-## UPDATE requirements.txt
 
 ```Bash
 pip freeze > requirements.txt
