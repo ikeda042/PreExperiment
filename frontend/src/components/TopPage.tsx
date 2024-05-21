@@ -33,7 +33,7 @@ export default function TopPage() {
                 <Button
                     variant="contained"
                     component={Link}
-                    to="/vb12"
+                    to="/glucose"
                     sx={{
                         bgcolor: 'black',
                         color: 'white',
