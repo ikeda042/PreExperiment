@@ -51,13 +51,13 @@ const VB12 = () => {
     };
     return (
         <Container>
-            <Typography variant="h4" gutterBottom>VB12 Calibration Curve</Typography>
+            <Typography variant="h5" align='center' gutterBottom>VB12 検量線データの入力</Typography>
             <form onSubmit={handleSubmit}>
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell align="center" style={{ width: '50%' }}>X</TableCell>
-                            <TableCell align="center" style={{ width: '50%' }}>Y</TableCell>
+                            <TableCell align="center" style={{ width: '50%' }}>VB12濃度(µg/mL)</TableCell>
+                            <TableCell align="center" style={{ width: '50%' }}>OD360(-)</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
