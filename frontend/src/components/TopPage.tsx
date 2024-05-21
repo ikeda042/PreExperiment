@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import DrawerAppBar from './NavigationBar';
+import Footer from './BottomNavBar';
 import VB12 from './VB12';
 
 export default function TopPage() {
@@ -11,6 +12,7 @@ export default function TopPage() {
                 テスト
             </Typography>
             <VB12 />
+            <Footer />
         </Box>
     );
 }
