@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import DrawerAppBar from './NavigationBar';
+import VB12 from './VB12';
 
 export default function TopPage() {
     return (
@@ -9,6 +10,7 @@ export default function TopPage() {
             <Typography variant="h1" align="center" sx={{ paddingTop: '20vh' }}>
                 テスト
             </Typography>
+            <VB12 />
         </Box>
     );
 }
