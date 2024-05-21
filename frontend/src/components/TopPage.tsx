@@ -5,7 +5,7 @@ import VB12 from './VB12';
 
 export default function TopPage() {
     return (
-        <Box sx={{ bgcolor: "#f7f6f5", color: 'black', minHeight: '100vh' }}>
+        <Box sx={{ bgcolor: "#f7f6f5", color: 'black' }}>
             <DrawerAppBar />
             <Typography variant="h1" align="center" sx={{ paddingTop: '20vh' }}>
                 テスト
