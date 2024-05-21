@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -27,7 +26,6 @@ const navItems = [""]; // Add your navigation items here if any
 export default function DrawerAppBar(props: Props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const navigate = useNavigate();
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -39,7 +37,6 @@ export default function DrawerAppBar(props: Props) {
                 variant="h6"
                 component="div"
                 sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                onClick={() => navigate('/')}
             >
                 マップオブジェクト編集コンソール
             </Typography>
@@ -74,16 +71,16 @@ export default function DrawerAppBar(props: Props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <ScienceIcon sx={{ mr: 2 }} />
+                    {/* <ScienceIcon sx={{ mr: 2 }} /> */}
                     <AdbIcon sx={{ mr: 2 }} />
                     <Typography
                         variant="h6"
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                        onClick={() => navigate('/')} // Add this line
                     >
-                        マップオブジェクト編集コンソール
+                        検量線自動生成
                     </Typography>
+
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
                             <Button key={item} sx={{ color: '#fff' }}>
