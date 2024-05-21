@@ -87,7 +87,18 @@ const VB12 = () => {
                         </TableBody>
                     </Table>
                     <Box display="flex" justifyContent="center" marginTop={2}>
-                        <Button type="submit" variant="contained" disabled={loading} startIcon={<AdbIcon />} sx={{ backgroundColor: '#000', color: '#fff' }}>
+                        <Button type="submit" variant="contained" disabled={loading} startIcon={<AdbIcon />} sx={{
+                            bgcolor: 'black',
+                            color: 'white',
+                            padding: '16px 24px',
+                            fontSize: '18px',
+                            '&:hover': {
+                                bgcolor: 'black',
+                            },
+                            '&:active': {
+                                bgcolor: 'black',
+                            }
+                        }}>
                             検量線を作成する
                         </Button>
                     </Box>
