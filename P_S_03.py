@@ -142,3 +142,26 @@ plt.ylabel(r"OD$_{600}$")
 plt.legend()
 plt.yscale("log")
 fig.savefig("images/OD360_P_S_3.png", dpi=500)
+
+
+# | P.A. conc.[M] |0 +  |0 -   | 0.05 -   | 0.1 -  | 0.15 - | 0.2 -   | 0.3 - |
+# |:---------------:|-------|-------|-------|-------|-------|-------|-------|
+# | 空ボトル重量 (g) | 14.6152 | 14.6538 | 14.6104| 14.5850| 14.6096| 14.6022|14.6309|
+# | 空ボトル＋乾燥菌体重量 (g)| 14.7366 | 14.7806 | 14.7006 | 14.6103|14.6304  | 14.6258 |14.6530 |
+
+empty_bottle_weights = [14.6152, 14.6538, 14.6104, 14.5850, 14.6096, 14.6022, 14.6309]
+empty_bottle_and_dried_weights = [
+    14.7366,
+    14.7806,
+    14.7006,
+    14.6103,
+    14.6304,
+    14.6258,
+    14.6530,
+]
+
+dried_weights = [
+    round(empty_bottle_and_dried_weights[i] - empty_bottle_weights[i], 3)
+    for i in range(len(empty_bottle_weights))
+]
+print(dried_weights)
