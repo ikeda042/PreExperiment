@@ -25,7 +25,7 @@ L = LinearRegression(
     zero_intercept=True,
     xlabel="Glucose (mg/mL)",
     ylabel=r"$\Delta OD_{340}$",
-    out_name="images/Glucose_01.png",
+    out_name="images/Glucose_01_std.png",
 )
 
 L.plot()
@@ -126,3 +126,5 @@ plt.legend()
 # ticks to inside
 plt.tick_params(direction="in")
 plt.savefig("images/Glucose_01_glu.png", dpi=400)
+
+print(L.predict_y(0.1))
