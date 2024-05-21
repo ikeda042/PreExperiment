@@ -52,7 +52,7 @@ export default function TopPage() {
                 <Button
                     variant="outlined"
                     component={Link}
-                    to="https://www.google.com"
+                    to="https://github.com/ikeda042/PreExperiment"
                     color='secondary'
                     startIcon={<GitHubIcon />}
                 >
