@@ -15,6 +15,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
+
 
 interface Props {
     window?: () => Window;
@@ -25,14 +27,9 @@ const navItems = [""]; // Add your navigation items here if any
 
 export default function DrawerAppBar(props: Props) {
     const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
-
-    const handleDrawerToggle = () => {
-        setMobileOpen((prevState) => !prevState);
-    };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+        <Box sx={{ textAlign: 'center' }} component={Link} to="/" >
             <Typography
                 variant="h6"
                 component="div"

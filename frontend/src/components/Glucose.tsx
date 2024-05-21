@@ -113,7 +113,6 @@ const Glucose = () => {
                     </div>
                 )}
             </Box>
-            <Footer />
         </Container>
     );
 };
