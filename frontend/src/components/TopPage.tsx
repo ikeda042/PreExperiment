@@ -50,21 +50,10 @@ export default function TopPage() {
                     グルコースの検量線を作成する
                 </Button>
                 <Button
-                    variant="contained"
+                    variant="outlined"
                     component={Link}
                     to="https://www.google.com"
-                    sx={{
-                        bgcolor: 'black',
-                        color: 'white',
-                        padding: '16px 24px',
-                        fontSize: '18px',
-                        '&:hover': {
-                            bgcolor: 'black',
-                        },
-                        '&:active': {
-                            bgcolor: 'black',
-                        }
-                    }}
+                    color='secondary'
                     startIcon={<GitHubIcon />}
                 >
                     予備実験ページ
