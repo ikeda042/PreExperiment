@@ -11,6 +11,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
+import Logo from '@mui/icons-material/Logo'; // Import the logo
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -61,7 +62,7 @@ export default function DrawerAppBar(props: Props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav" sx={{ backgroundColor: '#085c3c', color: 'white' }}>
+            <AppBar component="nav" sx={{ backgroundColor: '#000000', color: 'white' }}> {/* Change the background color to black */}
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -72,6 +73,7 @@ export default function DrawerAppBar(props: Props) {
                     >
                         <MenuIcon />
                     </IconButton>
+                    <Logo /> {/* Add the logo */}
                     <Typography
                         variant="h6"
                         component="div"
