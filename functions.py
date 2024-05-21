@@ -55,9 +55,16 @@ class LinearRegression:
         )
         plt.savefig(f"{self.out_name}", dpi=400)
 
-    def predict(self, x: float) -> float:
+    def predict_y(self, x: float) -> float:
         return (
             self.theta[0][0] * x
             if self.zero_intercept
             else self.theta[0][0] + self.theta[1][0] * x
+        )
+
+    def predict_x(self, y: float) -> float:
+        return (
+            y / self.theta[0][0]
+            if self.zero_intercept
+            else (y - self.theta[0][0]) / self.theta[1][0]
         )
