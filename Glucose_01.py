@@ -31,6 +31,10 @@ L = LinearRegression(
 L.plot()
 
 
+def od_to_glu_conc(OD: float) -> float:
+    return
+
+
 def delta(A1, A2) -> list[float]:
     return [j - i for i, j in zip(A1, A2)]
 
