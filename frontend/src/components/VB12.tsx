@@ -15,6 +15,9 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 import AdbIcon from '@mui/icons-material/Adb';
+import DrawerAppBar from './NavigationBar';
+import Footer from './BottomNavBar';
+
 
 const VB12 = () => {
     const [yValues, setYValues] = useState<string[]>(Array(9).fill(''));
@@ -51,52 +54,55 @@ const VB12 = () => {
     };
     return (
         <Container>
-            <Typography variant="h5" align='center' gutterBottom>VB12 検量線データの入力</Typography>
-            <form onSubmit={handleSubmit}>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell align="center" style={{ width: '50%' }}>VB12濃度(µg/mL)</TableCell>
-                            <TableCell align="center" style={{ width: '50%' }}>OD360(-)</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {yValues.map((value, index) => (
-                            <TableRow key={index}>
-                                <TableCell align="center">{["0.00", "0.10", "0.25", "0.50", "1.00", "2.00", "2.5", "4.00", "5.00"][index]}</TableCell>
-                                <TableCell align="center">
-                                    <TextField
-                                        type="number"
-                                        value={value}
-                                        onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(index, e.target.value)}
-                                        required
-                                        fullWidth
-                                        inputProps={{
-                                            min: value,
-                                            max: value
-                                        }}
-                                    />
-                                </TableCell>
+            <DrawerAppBar />
+            <Box mt={12} mb={20}>
+                <Typography variant="h5" align='center' gutterBottom>VB12 検量線データの入力</Typography>
+                <form onSubmit={handleSubmit}>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell align="center" style={{ width: '50%' }}>VB12濃度(µg/mL)</TableCell>
+                                <TableCell align="center" style={{ width: '50%' }}>OD360(-)</TableCell>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-                <Box display="flex" justifyContent="center" marginTop={2}>
-                    <Button type="submit" variant="contained" disabled={loading} startIcon={<AdbIcon />} sx={{ backgroundColor: '#000', color: '#fff' }}>
-                        検量線を作成する
-                    </Button>
-                </Box>
-                <Box display="flex" justifyContent="center" marginTop={2}>
-                    {loading && <CircularProgress />}
-                </Box>
-            </form>
-            {error && <Alert severity="error">{error}</Alert>}
-            {graphUrl && (
-                <div>
-                    <img src={graphUrl} alt="Graph" style={{ maxWidth: '100%' }} />
-                </div>
-            )}
-        </Container>
+                        </TableHead>
+                        <TableBody>
+                            {yValues.map((value, index) => (
+                                <TableRow key={index}>
+                                    <TableCell align="center">{["0.00", "0.10", "0.25", "0.50", "1.00", "2.00", "2.5", "4.00", "5.00"][index]}</TableCell>
+                                    <TableCell align="center">
+                                        <TextField
+                                            type="number"
+                                            value={value}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(index, e.target.value)}
+                                            required
+                                            fullWidth
+                                            inputProps={{
+                                                min: value,
+                                                max: value
+                                            }}
+                                        />
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                    <Box display="flex" justifyContent="center" marginTop={2}>
+                        <Button type="submit" variant="contained" disabled={loading} startIcon={<AdbIcon />} sx={{ backgroundColor: '#000', color: '#fff' }}>
+                            検量線を作成する
+                        </Button>
+                    </Box>
+                    <Box display="flex" justifyContent="center" marginTop={2}>
+                        {loading && <CircularProgress />}
+                    </Box>
+                </form>
+                {error && <Alert severity="error">{error}</Alert>}
+                {graphUrl && (
+                    <div>
+                        <img src={graphUrl} alt="Graph" style={{ maxWidth: '100%' }} />
+                    </div>
+                )}
+            </Box>
+        </Container >
     );
 };
 
