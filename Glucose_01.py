@@ -28,6 +28,11 @@ L = LinearRegression(
 
 L.plot()
 
+
+def delta(A1, A2) -> list[float]:
+    return [j - i for i, j in zip(A1, A2)]
+
+
 # なし 0
 PA_000_A1 = [0.051, 0.050, 0.046]
 PA_000_A2 = [0.363, 0.358, 0.247]
@@ -57,3 +62,7 @@ PA_030_A2 = [0.456, 0.475, 0.271]
 # あり 0
 PA_000_A1_GLC = [0.048, 0.048, 0.048]
 PA_000_A2_GLC = [0.247, 0.314, 0.408]
+
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=[6, 6])
