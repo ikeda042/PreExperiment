@@ -223,13 +223,13 @@ fig = plt.figure(figsize=(9, 6))
 
 days = [0, 1, 4]
 
-plt.plot(days, PA_000_DELTA_OD340, label="P.A. 0.00 M", marker="o")
+plt.plot(days, [i for i in PA_000_DELTA_OD340], label="P.A. 0.00 M", marker="o")
 plt.plot(days, PA_005_DELTA_OD340, label="P.A. 0.05 M", marker="o")
 plt.plot(days, PA_010_DELTA_OD340, label="P.A. 0.10 M", marker="o")
 plt.plot(days, PA_015_DELTA_OD340, label="P.A. 0.15 M", marker="o")
 plt.plot(days, PA_020_DELTA_OD340, label="P.A. 0.20 M", marker="o")
 plt.plot(days, PA_030_DELTA_OD340, label="P.A. 0.30 M", marker="o")
-plt.plot(days, PA_000_DELTA_OD340_GLC, label="P.A. 0.00 M (GLC +)", marker="o")
+plt.plot(days, PA_000_DELTA_OD340_GLC*200, label="P.A. 0.00 M (GLC +)", marker="o")
 
 plt.xlabel("Day")
 plt.ylabel("Glucose (mg/mL)")
