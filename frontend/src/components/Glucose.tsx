@@ -68,7 +68,7 @@ const Glucose = () => {
                         <TableBody>
                             {yValues.map((value, index) => (
                                 <TableRow key={index}>
-                                    <TableCell align="center">{["0.00", "0.50", "1.00", "1.50", "2.00", "2.50"][index]}</TableCell>
+                                    <TableCell align="center">{["0.00", "0.10", "0.20", "0.30", "0.40", "0.50"][index]}</TableCell>
                                     <TableCell align="center">
                                         <TextField
                                             type="number"
