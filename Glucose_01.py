@@ -2,7 +2,7 @@ from functions import LinearRegression
 import seaborn as sns
 
 sns.set()
-conc: list[float] = [0, 0.5, 1.0, 1.5, 2.0, 2.5]
+conc: list[float] = [0, 0.1,0.2,0.3,0.4,0.5]
 
 # 検量線データ
 # 試薬1をブランクとした場合のOD340
