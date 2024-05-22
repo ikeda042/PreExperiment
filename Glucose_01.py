@@ -236,5 +236,5 @@ plt.ylabel(r"$\Delta OD_{340}$")
 plt.legend()
 # ticks to inside
 plt.tick_params(direction="in")
-plt.savefig("images/Glucose_01.png", dpi=400)
+plt.savefig("images/Glucose_01_re.png", dpi=400)
 plt.close(fig)
