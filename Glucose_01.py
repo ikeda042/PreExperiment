@@ -126,3 +126,39 @@ plt.legend()
 # ticks to inside
 plt.tick_params(direction="in")
 plt.savefig("images/Glucose_01_glu.png", dpi=400)
+plt.close(fig)
+
+## HPLC data 
+# 	0[M]補糖	0[M]	0.05[M]	0.1[M]	0.15[M]	0.2[M]	0.3[M]
+# 0 54.05411103	51.66318965	50.43049169	50.48306959	51.01206259	47.53516195	49.48249338
+# 1	48.15490154	48.67816906	49.86942301	51.51560258	51.68056068	47.99409073	47.41436107
+# 4	60.22326505	36.57914592	39.85478261	48.41286184	49.65970956	48.19204693	47.40859955
+
+PA_000_GLC_HPLC = [51.66318965, 48.67816906, 36.57914592]
+PA_000_HPLC  = [51.66318965, 48.67816906, 36.57914592]
+PA_005_HPLC  = [50.43049169, 49.86942301, 39.85478261]
+PA_010_HPLC  = [50.48306959, 51.51560258, 48.41286184]
+PA_015_HPLC  = [51.01206259, 51.68056068, 49.65970956]
+PA_020_HPLC  = [47.53516195, 47.99409073, 48.19204693]
+PA_030_HPLC  = [49.48249338, 47.41436107, 47.40859955]
+
+fig = plt.figure(figsize=(9, 6))
+
+days = [0, 1, 4]
+
+plt.plot(days, PA_000_HPLC, label="P.A. 0.00 M", marker="o")
+plt.plot(days, PA_005_HPLC, label="P.A. 0.05 M", marker="o")
+plt.plot(days, PA_010_HPLC, label="P.A. 0.10 M", marker="o")
+plt.plot(days, PA_015_HPLC, label="P.A. 0.15 M", marker="o")
+plt.plot(days, PA_020_HPLC, label="P.A. 0.20 M", marker="o")
+plt.plot(days, PA_030_HPLC, label="P.A. 0.30 M", marker="o")
+plt.plot(days, PA_000_GLC_HPLC, label="P.A. 0.00 M (GLC +)", marker="o")
+
+plt.xlabel("Day")
+plt.ylabel("Glucose (mg/mL)")
+plt.legend()
+# ticks to inside
+plt.tick_params(direction="in")
+plt.savefig("images/Glucose_01_HPLC.png", dpi=400)
+
+
