@@ -232,7 +232,7 @@ plt.plot(days, PA_030_DELTA_OD340, label="P.A. 0.30 M", marker="o")
 plt.plot(days, PA_000_DELTA_OD340_GLC, label="P.A. 0.00 M (GLC +)", marker="o")
 
 plt.xlabel("Day")
-plt.ylabel(r"$\Delta OD_{340}$")
+plt.ylabel("Glucose (mg/mL)")
 plt.legend()
 # ticks to inside
 plt.tick_params(direction="in")
