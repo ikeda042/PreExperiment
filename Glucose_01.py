@@ -174,16 +174,16 @@ PA_000_DELTA_OD340 = delta(PA_000_A1, PA_000_A2)
 PA_000_GLU_A1 = [L.predict_x(i) for i in PA_000_DELTA_OD340]
 
 # なし 0.05
-PA_005_A1 = [0.048, 0.051, 0.051]
-PA_005_A2 = [0.319, 0.055, 0.296]
+PA_005_A1 = [0.048, -0.008, 0.051]
+PA_005_A2 = [0.319, 0.308, 0.296]
 PA_005_DELTA_OD340 = delta(PA_005_A1, PA_005_A2)
 
 PA_005_GLU_A1 = [L.predict_x(i) for i in PA_005_DELTA_OD340]
 
 
 # なし 0.10
-PA_010_A1 = [-0.001, -0.015, 0.050]
-PA_010_A2 = [0.149, 0.229, 0.233]
+PA_010_A1 = [0, -0.008, -0.008]
+PA_010_A2 = [0.325, 0.298, 0.287]
 PA_010_DELTA_OD340 = delta(PA_010_A1, PA_010_A2)
 
 PA_010_GLU_A1 = [L.predict_x(i) for i in PA_010_DELTA_OD340]
