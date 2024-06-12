@@ -110,4 +110,30 @@ for i, group in enumerate(group_glu_p, start=1):
 plt.xlabel("Days")
 plt.ylabel("Glucose (M)")
 plt.legend()
-plt.savefig("glucose_levels.png", dpi=500)
+plt.savefig("images/glucose_levels.png", dpi=500)
+plt.close()
+plt.clf()
+
+# Glucose n data
+group_glu_n = [
+    [244.0, 296.6, 236.0],  # group 1
+    [236.6, 285.8, 236.8],  # group 2
+    [249.4, 355.0, 254.6],  # group 3
+    [219.8, 353.2, 254.6],  # group 4
+    [263.2, 333.0, 0],  # group 5
+    [234.2, 314.4, 0],  # group 6
+    [341.0, 344.8, 0],  # group 7
+    [336.2, 360.4, 0],  # group 8
+    [376.2, 385.2, 0],  # group 9
+    [296.8, 282.8, 0],  # group 10
+]
+
+plt.figure(figsize=(10, 6))
+
+for i, group in enumerate(group_glu_n, start=1):
+    plt.plot(days, group, marker="o", label=f"Group {i}")
+
+plt.xlabel("Days")
+plt.ylabel("Glucose (M)")
+plt.legend()
+plt.savefig("images/glucose_levels_n.png", dpi=500)
