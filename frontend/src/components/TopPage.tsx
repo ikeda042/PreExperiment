@@ -49,7 +49,6 @@ export default function TopPage() {
                 >
                     VB12の検量線を作成する
                 </Button>
-
                 <Button
                     variant="outlined"
                     component={Link}
@@ -75,8 +74,19 @@ export default function TopPage() {
                     color='secondary'
                     startIcon={<GitHubIcon />}
                 >
-                    本実験グルコース定量データ(HPLC)
+                    本実験HPLCデータ(表)
                 </Button>
+                <Button
+                    variant="outlined"
+                    component={Link}
+                    to="https://github.com/ikeda042/PreExperiment/blob/main/%E6%9C%AC%E5%AE%9F%E9%A8%93_HPLC_data.md"
+                    color='secondary'
+                    startIcon={<GitHubIcon />}
+                >
+                    本実験HPLCデータをダウンロード(Excel)
+                </Button>
+
+
             </Stack>
 
             <Footer />
