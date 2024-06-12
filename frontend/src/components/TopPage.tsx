@@ -68,6 +68,15 @@ export default function TopPage() {
                 >
                     グルコース検量線(予備実験データ)
                 </Button>
+                <Button
+                    variant="outlined"
+                    component={Link}
+                    to="https://github.com/ikeda042/PreExperiment/blob/main/%E6%9C%AC%E5%AE%9F%E9%A8%93_HPLC_data.md"
+                    color='secondary'
+                    startIcon={<GitHubIcon />}
+                >
+                    本実験グルコース定量データ(HPLC)
+                </Button>
             </Stack>
 
             <Footer />
