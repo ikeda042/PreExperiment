@@ -4,6 +4,7 @@ import DrawerAppBar from './NavigationBar';
 import Footer from './BottomNavBar';
 import { Stack } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import axios from 'axios';
 
 export default function TopPage() {
     return (
@@ -78,10 +79,17 @@ export default function TopPage() {
                 </Button>
                 <Button
                     variant="outlined"
-                    component={Link}
-                    to="https://github.com/ikeda042/PreExperiment/blob/main/%E6%9C%AC%E5%AE%9F%E9%A8%93_HPLC_data.md"
-                    color='secondary'
+                    color='success'
                     startIcon={<GitHubIcon />}
+                    onClick={async () => {
+                        const response = await axios.get('/hplc_data/xlsx', { responseType: 'blob' });
+                        const url = window.URL.createObjectURL(new Blob([response.data]));
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.setAttribute('download', 'hplc_data.xlsx');
+                        document.body.appendChild(link);
+                        link.click();
+                    }}
                 >
                     本実験HPLCデータをダウンロード(Excel)
                 </Button>
