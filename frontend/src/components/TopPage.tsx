@@ -14,25 +14,6 @@ export default function TopPage() {
                 <Button
                     variant="contained"
                     component={Link}
-                    to="/vb12"
-                    sx={{
-                        bgcolor: 'black',
-                        color: 'white',
-                        padding: '16px 24px',
-                        fontSize: '18px',
-                        '&:hover': {
-                            bgcolor: 'black',
-                        },
-                        '&:active': {
-                            bgcolor: 'black',
-                        }
-                    }}
-                >
-                    VB12の検量線を作成する
-                </Button>
-                <Button
-                    variant="contained"
-                    component={Link}
                     to="/glucose"
                     sx={{
                         bgcolor: 'black',
@@ -49,6 +30,26 @@ export default function TopPage() {
                 >
                     グルコースの検量線を作成する
                 </Button>
+                <Button
+                    variant="contained"
+                    component={Link}
+                    to="/vb12"
+                    sx={{
+                        bgcolor: 'black',
+                        color: 'white',
+                        padding: '16px 24px',
+                        fontSize: '18px',
+                        '&:hover': {
+                            bgcolor: 'black',
+                        },
+                        '&:active': {
+                            bgcolor: 'black',
+                        }
+                    }}
+                >
+                    VB12の検量線を作成する
+                </Button>
+
                 <Button
                     variant="outlined"
                     component={Link}
