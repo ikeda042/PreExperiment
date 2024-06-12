@@ -5,7 +5,7 @@ import Footer from './BottomNavBar';
 import { Stack } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import axios from 'axios';
-
+import DownloadIcon from '@mui/icons-material/Download';
 export default function TopPage() {
     return (
         <Box sx={{ bgcolor: "#f7f6f5", color: 'black', display: 'flex', flexDirection: 'column', minHeight: '100vh', justifyContent: 'center', alignItems: 'center' }}>
@@ -80,9 +80,9 @@ export default function TopPage() {
                 <Button
                     variant="outlined"
                     color='success'
-                    startIcon={<GitHubIcon />}
+                    startIcon={<DownloadIcon />}
                     onClick={async () => {
-                        const response = await axios.get('/hplc_data/xlsx', { responseType: 'blob' });
+                        const response = await axios.get('https://api.ikeda042api.net/api/lab/hplc_data/xlsx', { responseType: 'blob' });
                         const url = window.URL.createObjectURL(new Blob([response.data]));
                         const link = document.createElement('a');
                         link.href = url;
