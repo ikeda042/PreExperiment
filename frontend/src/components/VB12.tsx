@@ -16,7 +16,6 @@ import {
 import axios from 'axios';
 import AdbIcon from '@mui/icons-material/Adb';
 import DrawerAppBar from './NavigationBar';
-import Footer from './BottomNavBar';
 
 
 const VB12 = () => {
