@@ -58,6 +58,15 @@ export default function TopPage() {
                 >
                     予備実験ページ
                 </Button>
+                <Button
+                    variant="outlined"
+                    component={Link}
+                    to="https://github.com/ikeda042/PreExperiment/blob/main/Glucose_01.md"
+                    color='secondary'
+                    startIcon={<GitHubIcon />}
+                >
+                    グルコース検量線(予備実験データ)
+                </Button>
             </Stack>
 
             <Footer />
