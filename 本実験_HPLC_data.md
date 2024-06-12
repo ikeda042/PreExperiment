@@ -1,5 +1,15 @@
 # HPLC測定結果
 
+#　グラフ
+
+## 有機酸ありグルコース
+
+![](images/glucose_levels.png)
+
+## 有機酸なしグルコース
+
+![](images/glucose_levels_n.png)
+
 ## Day0 
 
 ### 有機酸あり
