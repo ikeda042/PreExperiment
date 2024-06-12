@@ -108,7 +108,7 @@ for i, group in enumerate(group_glu_p, start=1):
     plt.plot(days, group, marker="o", label=f"Group {i}")
 
 plt.xlabel("Days")
-plt.ylabel("Glucose (M)")
+plt.ylabel("Glucose (mM)")
 plt.legend()
 plt.savefig("images/glucose_levels.png", dpi=500)
 plt.close()
@@ -134,7 +134,7 @@ for i, group in enumerate(group_glu_n, start=1):
     plt.plot(days, group, marker="o", label=f"Group {i}")
 
 plt.xlabel("Days")
-plt.ylabel("Glucose (M)")
+plt.ylabel("Glucose (mM)")
 plt.legend()
 plt.savefig("images/glucose_levels_n.png", dpi=500)
 plt.close()
@@ -161,7 +161,7 @@ for i, group in enumerate(group_pro_p, start=1):
     plt.plot(days, group, marker="o", label=f"Group {i}")
 
 plt.xlabel("Days")
-plt.ylabel("Propionate (M)")
+plt.ylabel("Propionate (mM)")
 plt.legend()
 plt.savefig("images/propionate_levels.png", dpi=500)
 
@@ -189,6 +189,6 @@ for i, group in enumerate(group_pro_n, start=1):
     plt.plot(days, group, marker="o", label=f"Group {i}")
 
 plt.xlabel("Days")
-plt.ylabel("Propionate (M)")
+plt.ylabel("Propionate (mM)")
 plt.legend()
 plt.savefig("images/propionate_levels_n.png", dpi=500)
