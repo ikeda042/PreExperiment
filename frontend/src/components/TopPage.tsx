@@ -56,7 +56,7 @@ export default function TopPage() {
                     color='secondary'
                     startIcon={<GitHubIcon />}
                 >
-                    予備実験ページ
+                    予備実験データまとめ
                 </Button>
                 <Button
                     variant="outlined"
