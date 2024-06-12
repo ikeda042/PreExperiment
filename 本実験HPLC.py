@@ -139,3 +139,56 @@ plt.legend()
 plt.savefig("images/glucose_levels_n.png", dpi=500)
 plt.close()
 plt.clf()
+
+# propionate data
+
+group_pro_p = [
+    [44.2, 53.8, 147.2],  # group 1
+    [89.6, 79.8, 135.0],  # group 2
+    [149.6, 137.8, 167.0],  # group 3
+    [179.8, 255.0, 228.6],  # group 4
+    [308.8, 264.4, 337.4],  # group 5
+    [42.4, 42.8, 130.6],  # group 6
+    [94.0, 93.8, 153.6],  # group 7
+    [127.6, 127.2, 171.6],  # group 8
+    [0, 172.8, 237.8],  # group 9
+    [312.2, 323.6, 346.4],  # group 10
+]
+
+plt.figure(figsize=(10, 6))
+
+for i, group in enumerate(group_pro_p, start=1):
+    plt.plot(days, group, marker="o", label=f"Group {i}")
+
+plt.xlabel("Days")
+plt.ylabel("Propionate (M)")
+plt.legend()
+plt.savefig("images/propionate_levels.png", dpi=500)
+
+plt.close()
+plt.clf()
+
+# propionate n data
+
+group_pro_n = [
+    [0, 12.4, 114.4],  # group 1
+    [0, 15.8, 106.2],  # group 2
+    [0, 18.8, 107.2],  # group 3
+    [0, 16.2, 106.2],  # group 4
+    [0, 12.8, 0],  # group 5
+    [0, 26.2, 0],  # group 6
+    [0, 19.2, 0],  # group 7
+    [0, 19.8, 0],  # group 8
+    [260.4, 14.6, 0],  # group 9
+    [0, 19.2, 0],  # group 10
+]
+
+plt.figure(figsize=(10, 6))
+
+for i, group in enumerate(group_pro_n, start=1):
+    plt.plot(days, group, marker="o", label=f"Group {i}")
+
+plt.xlabel("Days")
+plt.ylabel("Propionate (M)")
+plt.legend()
+plt.savefig("images/propionate_levels_n.png", dpi=500)
