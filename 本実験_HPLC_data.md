@@ -10,6 +10,15 @@
 
 ![](images/glucose_levels_n.png)
 
+## 有機酸ありプロピオン酸
+
+![](images/propionate_levels.png)
+
+## 有機酸なしプロピオン酸
+
+![](images/propionate_levels_n.png)
+
+
 ## Day0 
 
 ### 有機酸あり
