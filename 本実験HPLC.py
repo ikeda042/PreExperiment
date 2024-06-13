@@ -192,3 +192,5 @@ plt.xlabel("Days")
 plt.ylabel("Propionate (mM)")
 plt.legend()
 plt.savefig("images/propionate_levels_n.png", dpi=500)
+
+print(np.array(group_pro_n))
