@@ -35,48 +35,48 @@ group_5_glu_p = [298.4, 254.0, 317.0]
 group_5_pro_p = [308.8, 264.4, 337.4]
 group_5_acet_p = [0, 0, 0]
 
-group_5_glu_n = [263.2, 333.0, 0]
-group_5_pro_n = [0, 12.8, 0]
+group_5_glu_n = [263.2, 333.0, 12.63 * 20]
+group_5_pro_n = [0, 12.8, 5.18 * 20]
 group_5_acet_n = [0, 0, 0]
 
 group_6_glu_p = [295.6, 275.2, 272.2]
 group_6_pro_p = [42.4, 42.8, 130.6]
 group_6_acet_p = [0, 0, 0]
 
-group_6_glu_n = [234.2, 314.4, 0]
-group_6_pro_n = [0, 26.2, 0]
+group_6_glu_n = [234.2, 314.4, 8.7 * 20]
+group_6_pro_n = [0, 26.2, 5.73 * 20]
 group_6_acet_n = [0, 0, 0]
 
 group_7_glu_p = [277.0, 276.2, 293.6]
 group_7_pro_p = [94.0, 93.8, 153.6]
 group_7_acet_p = [0, 0, 0]
 
-group_7_glu_n = [341.0, 344.8, 0]
-group_7_pro_n = [0, 19.2, 0]
+group_7_glu_n = [341.0, 344.8, 10.54 * 20]
+group_7_pro_n = [0, 19.2, 6.36 * 20]
 group_7_acet_n = [0, 0, 0]
 
 group_8_glu_p = [250.6, 245.6, 299.6]
 group_8_pro_p = [127.6, 127.2, 171.6]
 group_8_acet_p = [0, 0, 0]
 
-group_8_glu_n = [336.2, 360.4, 0]
-group_8_pro_n = [0, 19.8, 0]
+group_8_glu_n = [336.2, 360.4, 11.17 * 20]
+group_8_pro_n = [0, 19.8, 5.96 * 20]
 group_8_acet_n = [0, 8.0, 0]
 
 group_9_glu_p = [251.2, 249.0, 329.0]
 group_9_pro_p = [0, 172.8, 237.8]
 group_9_acet_p = [0, 0, 2.6]
 
-group_9_glu_n = [376.2, 385.2, 0]
-group_9_pro_n = [260.4, 14.6, 0]
+group_9_glu_n = [376.2, 385.2, 11.84 * 20]
+group_9_pro_n = [260.4, 14.6, 5.69 * 20]
 group_9_acet_n = [0, 0, 0]
 
 group_10_glu_p = [291.0, 298.6, 309.4]
 group_10_pro_p = [312.2, 323.6, 346.4]
 group_10_acet_p = [0, 0, 0]
 
-group_10_glu_n = [296.8, 282.8, 0]
-group_10_pro_n = [0, 19.2, 0]
+group_10_glu_n = [296.8, 282.8, 9.95 * 20]
+group_10_pro_n = [0, 19.2, 5.9 * 20]
 group_10_acet_n = [0, 7.6, 0]
 
 
