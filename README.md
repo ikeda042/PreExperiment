@@ -10,9 +10,6 @@
 
 ## 検量線の自動生成
 
-検量線自動生成サイト
-
-[https://overbookingikeda.com/](https://overbookingikeda.com/)
 
 [データ解析コード](functions.py)
 
